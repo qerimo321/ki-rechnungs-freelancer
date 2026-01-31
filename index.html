@@ -10,6 +10,13 @@
     gtag('config', 'G-BSC0RCF1MJ');
   </script>
   <!-- Ende Google Analytics -->
+
+  <!-- Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com;">
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <!-- End Security Headers -->
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -32,16 +39,15 @@
       --bg-dark: #020617;
       --card-bg: rgba(30, 41, 59, 0.4);
       --primary: #3b82f6;
-      --accent: #38bdf8; /* Baby Blue / Cyan */
+      --accent: #38bdf8;
       --text-main: #ffffff;
       --text-muted: #cbd5e1;
-      --success: #10b981; /* Emerald */
-      --warning: #fbbf24; /* Amber */
+      --success: #10b981;
+      --warning: #fbbf24;
       --glass-border: 1px solid rgba(255, 255, 255, 0.08);
       --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
     }
 
-    /* --- RESET --- */
     * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
     html { scroll-behavior: smooth; }
     
@@ -52,7 +58,6 @@
       color: var(--text-main); 
       font-size: 16px;
       overflow-x: hidden;
-      /* Background Mesh Gradient */
       background-image: 
         radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
         radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 40%);
@@ -60,12 +65,10 @@
 
     .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
 
-    /* --- ANIMATIONS --- */
     @keyframes pulseGlow { 0% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.4); } 70% { box-shadow: 0 0 0 15px rgba(56, 189, 248, 0); } 100% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0); } }
     @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-6px); } 100% { transform: translateY(0px); } }
 
-    /* --- HERO --- */
     .hero { 
       text-align: center; 
       padding: 140px 20px 60px; 
@@ -120,7 +123,6 @@
     }
     .cta-main:hover { transform: translateY(-4px) scale(1.02); color: white; }
 
-    /* --- CALCULATOR WIDGET (NEW!) --- */
     .calc-widget {
       background: linear-gradient(180deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%);
       border: var(--glass-border);
@@ -139,7 +141,6 @@
     .calc-result { font-size: 2.5em; font-weight: 800; color: var(--accent); text-shadow: 0 0 20px rgba(56, 189, 248, 0.4); }
     .calc-sub { font-size: 0.9em; color: var(--text-muted); }
 
-    /* --- QUIZ SECTION --- */
     .quiz-section {
       background: rgba(15, 23, 42, 0.6);
       backdrop-filter: blur(16px);
@@ -183,7 +184,6 @@
       animation: slideUp 0.5s ease;
     }
 
-    /* --- SORTING CONTROLS --- */
     .controls-header {
       display: flex;
       justify-content: space-between;
@@ -205,7 +205,6 @@
     }
     .sort-btn.active-sort { border-color: var(--accent); color: var(--accent); background: rgba(56, 189, 248, 0.05); }
 
-    /* --- CARDS GRID --- */
     .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 25px; margin-bottom: 100px; }
     .card { 
       background: var(--card-bg);
@@ -233,7 +232,6 @@
     }
     .card-link:hover { background: var(--accent); color: #0f172a; }
 
-    /* --- SMART TABLE --- */
     .table-container { 
       overflow-x: auto; 
       background: rgba(15, 23, 42, 0.6); 
@@ -248,7 +246,6 @@
     tr:last-child td { border-bottom: none; }
     tr:hover td { background: rgba(255,255,255,0.02); }
 
-    /* --- SOCIAL PROOF NOTIFICATION --- */
     #social-toast {
       position: fixed; bottom: 20px; left: 20px;
       background: rgba(15, 23, 42, 0.9);
@@ -265,24 +262,26 @@
     }
     #social-toast img { width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--accent); }
 
-    /* --- FOOTER --- */
     footer { text-align: center; color: #64748b; padding: 60px 20px; font-size: 0.9em; border-top: 1px solid rgba(255,255,255,0.05); }
     footer a { color: var(--accent); text-decoration: none; }
 
-    /* Mobile Tweaks */
     @media (max-width: 600px) {
       .hero { padding-top: 100px; }
       .controls-header { flex-direction: column; align-items: flex-start; }
       .sort-btn { flex: 1; margin: 0 5px 0 0; }
-      #social-toast { display: none; } /* Hide toast on mobile to save space */
+      #social-toast { display: none; }
     }
   </style>
 </head>
 <body>
 
+<!-- Honeypot gegen Spam-Bots (versteckt) -->
+<div style="position:absolute; left:-5000px;" aria-hidden="true">
+  <input type="text" name="website" tabindex="-1" value="" autocomplete="off">
+</div>
+
 <div class="container">
 
-  <!-- HERO -->
   <div class="hero">
     <div class="badge-pill">🚀 Updated for 2026</div>
     <h1>Invoicing.<br><span>Done in 10 Seconds.</span></h1>
@@ -290,7 +289,6 @@
     <a href="javascript:void(0)" class="cta-main" onclick="scrollToSection('quiz')">Find My Perfect Tool</a>
   </div>
 
-  <!-- SAVINGS CALCULATOR (INTERACTIVE HOOK) -->
   <div class="calc-widget">
     <div class="calc-content">
       <div class="calc-title">How many invoices do you send per month?</div>
@@ -302,7 +300,6 @@
     </div>
   </div>
 
-  <!-- INTELLIGENT QUIZ -->
   <div id="quiz" class="quiz-section">
     <h2>🎯 The Intelligence Engine</h2>
     <p style="color:#94a3b8; margin-bottom:25px;">Select your profile. We remember your choice.</p>
@@ -320,7 +317,6 @@
     </div>
   </div>
 
-  <!-- SMART GRID -->
   <div class="controls-header">
     <h2 class="section-title" style="margin:0; font-size:1.8em; font-weight:800; color:white;">🔥 AI Tools Analysis</h2>
     <div>
@@ -332,7 +328,6 @@
 
   <div class="cards" id="tools-grid">
     
-    <!-- 1. FreshBooks -->
     <div class="card" data-rating="4.8" data-price="19">
       <div class="card-header">
         <h3>FreshBooks</h3>
@@ -343,7 +338,6 @@
       <a href="https://freshbooks.com/?ref=YOURID" class="card-link">Visit Site</a>
     </div>
 
-    <!-- 2. Wave -->
     <div class="card" data-rating="4.5" data-price="0">
       <div class="card-header">
         <h3>Wave</h3>
@@ -354,7 +348,6 @@
       <a href="https://waveapps.com/?ref=YOURID" class="card-link">Visit Site</a>
     </div>
 
-    <!-- 3. Invoyce -->
     <div class="card" data-rating="4.7" data-price="1">
       <div class="card-header">
         <h3>Invoyce</h3>
@@ -365,7 +358,6 @@
       <a href="https://invoyce.ai/?ref=YOURID" class="card-link">Get App</a>
     </div>
 
-    <!-- 4. Zoho -->
     <div class="card" data-rating="4.4" data-price="0">
       <div class="card-header">
         <h3>Zoho Invoice</h3>
@@ -376,7 +368,6 @@
       <a href="https://zoho.com/?ref=YOURID" class="card-link">Visit Site</a>
     </div>
 
-    <!-- 5. Bonsai -->
     <div class="card" data-rating="4.9" data-price="17">
       <div class="card-header">
         <h3>Bonsai</h3>
@@ -387,7 +378,6 @@
       <a href="https://hellobonsai.com/?ref=YOURID" class="card-link">Visit Site</a>
     </div>
 
-    <!-- 6. Invoicer.ai -->
     <div class="card" data-rating="4.6" data-price="10">
       <div class="card-header">
         <h3>Invoicer.ai</h3>
@@ -398,7 +388,6 @@
       <a href="https://invoicer.ai/?ref=YOURID" class="card-link">Visit Site</a>
     </div>
 
-    <!-- 7. QuickBooks -->
     <div class="card" data-rating="4.7" data-price="25">
       <div class="card-header">
         <h3>QuickBooks</h3>
@@ -410,7 +399,6 @@
     </div>
   </div>
 
-  <!-- SMART COMPARISON MATRIX -->
   <h2 class="section-title" style="margin-bottom:30px; font-weight:800; font-size:1.8em; color:white;">📊 Smart Comparison Matrix</h2>
   <div class="table-container">
     <table>
@@ -466,7 +454,6 @@
     </table>
   </div>
 
-  <!-- FAQ -->
   <div class="faq" style="max-width:800px; margin:0 auto 100px;">
     <h2 class="section-title" style="margin-bottom:30px; font-weight:800; font-size:1.8em; color:white;">Frequently Asked</h2>
     <div class="faq-item" style="background:var(--card-bg); border-radius:16px; margin-bottom:15px; border:var(--glass-border);">
@@ -492,7 +479,6 @@
     <p style="font-size:0.8em; margin-top:15px; opacity:0.5;">© 2026 Freelancer AI Tools. Disclosure: Links are affiliate links.</p>
   </footer>
 
-  <!-- SOCIAL PROOF TOAST -->
   <div id="social-toast">
     <div style="font-size:1.5em;">🚀</div>
     <div>
@@ -504,18 +490,49 @@
 </div>
 
 <script>
+  // --- SECURITY FEATURES ---
+  // Anti-Spam Rate Limiting
+  let clickCount = 0;
+  let isBlocked = false;
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.card-link, .cta-main').forEach(link => {
+      link.addEventListener('click', function(e) {
+        clickCount++;
+        if (clickCount > 10 && !isBlocked) {
+          isBlocked = true;
+          alert('⚠️ Too many clicks detected. Please wait 60 seconds.');
+          e.preventDefault();
+          setTimeout(() => { 
+            clickCount = 0; 
+            isBlocked = false; 
+          }, 60000);
+        }
+      });
+    });
+  });
+
+  // Console Warning
+  (function() {
+    let devtools = /./;
+    devtools.toString = function() {
+      console.log('%c⚠️ STOP!', 'color:red; font-size:40px; font-weight:bold;');
+      console.log('%cThis console is for developers only.', 'font-size:16px;');
+      console.log('%cIf someone told you to paste code here, it might be a scam!', 'font-size:14px; color:orange;');
+      return '';
+    };
+    console.log('%c ', devtools);
+  })();
+
   // --- CALCULATOR LOGIC ---
   function updateCalc() {
     const val = document.getElementById('invoiceRange').value;
     document.getElementById('invoiceCount').innerText = val;
-    // Assume 20 mins saved per invoice per month = 4 hours per year per invoice
     const hours = Math.round(val * 4); 
     document.getElementById('hoursSaved').innerText = hours;
-    // Assume $100 hourly rate
     const money = (hours * 100).toLocaleString();
     document.getElementById('moneySaved').innerText = "$" + money;
   }
-  updateCalc(); // Init
+  updateCalc();
 
   // --- SOCIAL PROOF SIMULATION ---
   setTimeout(() => {
