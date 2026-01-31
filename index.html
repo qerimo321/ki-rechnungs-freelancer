@@ -1,254 +1,276 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Best AI Invoicing Software for Freelancers 2026</title>
-  <meta name="description" content="7 Top AI tools for freelancer invoicing compared: Free to Premium. Save hours on billing!">
+  <title>Top 7 KI-Rechnungssoftware für Freelancer 2026</title>
+  <meta name="description" content="Der ultimative Vergleich: Die besten KI-Tools für Rechnungen, Buchhaltung und Freelancer. Von kostenlos bis Profi-Suite.">
   <style>
-    /* Reset & Typography */
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { 
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
-      line-height: 1.6; 
-      background-color: #0f172a; 
-      color: #e2e8f0; 
-      font-size: 16px;
-      overflow-x: hidden;
+    /* --- MODERN VARIABLES & RESET --- */
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4338ca;
+      --accent: #ec4899;
+      --bg: #f8fafc;
+      --card-bg: rgba(255, 255, 255, 0.85);
+      --text: #1e293b;
+      --text-light: #64748b;
+      --success: #10b981;
+      --shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
     }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    
+    body { background: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 60px; }
+    
+    /* --- HERO SECTION --- */
+    .hero {
+      background: linear-gradient(135deg, #4f46e5 0%, #9333ea 100%);
+      color: white;
+      padding: 80px 20px 60px;
+      text-align: center;
+      border-radius: 0 0 40px 40px;
+      margin-bottom: 40px;
+      box-shadow: var(--shadow);
+    }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; margin-bottom: 15px; letter-spacing: -1px; line-height: 1.1; }
+    .hero p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto 30px; }
+    .badge { background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; display: inline-block; margin-bottom: 20px; backdrop-filter: blur(5px); }
 
-    /* Animations */
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0px); }
+    /* --- FILTER BUTTONS --- */
+    .filter-container { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 40px; }
+    .filter-btn {
+      background: white; border: none; padding: 12px 24px; border-radius: 50px; cursor: pointer;
+      font-weight: 600; color: var(--text); box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      transition: all 0.2s ease; font-size: 1rem;
     }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
-      70% { box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
-    }
+    .filter-btn.active, .filter-btn:hover { background: var(--text); color: white; transform: translateY(-2px); }
 
-    .container {
-      max-width: 900px; 
-      margin: 0 auto; 
-      padding: 20px; 
-    }
+    /* --- GRID LAYOUT --- */
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
 
-    /* INTERACTIVE HERO */
-    .hero { 
-      background: radial-gradient(circle at top right, #1e293b 0%, #0f172a 100%); 
-      color: #f8fafc; 
-      text-align: center; 
-      padding: 80px 20px; 
-      border-radius: 30px; 
-      margin: 40px 0 80px 0;
-      border: 1px solid rgba(148, 163, 184, 0.1); 
+    /* --- TOOL CARD (Glassmorphism) --- */
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 24px;
+      padding: 30px;
+      border: 1px solid rgba(255,255,255,0.5);
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       position: relative;
       overflow: hidden;
-    }
-    
-    .rocket-icon {
-      font-size: 4em;
-      display: inline-block;
-      animation: float 3s ease-in-out infinite;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 { 
-      font-size: 2.8em; 
-      margin-bottom: 20px; 
-      line-height: 1.1;
-      font-weight: 800;
-      background: linear-gradient(135deg, #fff 30%, #60a5fa 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    
-    .cta-button { 
-      background: #3b82f6; 
-      color: white; 
-      padding: 18px 40px; 
-      border-radius: 50px; 
-      font-size: 1.1em; 
-      font-weight: 700; 
-      text-decoration: none; 
-      display: inline-block; 
-      margin-top: 30px;
-      animation: pulse 2s infinite;
-      transition: transform 0.2s;
-    }
-    .cta-button:hover { transform: scale(1.05); }
-
-    /* INTERACTIVE QUIZ SECTION */
-    .quiz-section {
-      background: #1e293b;
-      padding: 40px;
-      border-radius: 24px;
-      text-align: center;
-      margin-bottom: 80px;
-      border: 1px solid #334155;
-    }
-    .quiz-options {
       display: flex;
-      gap: 15px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 25px;
+      flex-direction: column;
     }
-    .quiz-btn {
-      background: #0f172a;
-      border: 1px solid #475569;
-      color: #e2e8f0;
-      padding: 15px 25px;
-      border-radius: 12px;
-      cursor: pointer;
-      font-size: 1em;
-      transition: all 0.2s;
+    .card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.15); }
+    
+    /* Tags inside Card */
+    .card-tag {
+      position: absolute; top: 20px; right: 20px;
+      background: #e0e7ff; color: var(--primary); 
+      font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 12px; text-transform: uppercase;
     }
-    .quiz-btn:hover, .quiz-btn.active {
-      background: #3b82f6;
-      border-color: #3b82f6;
-      color: white;
-      transform: translateY(-2px);
-    }
-    #recommendation {
-      margin-top: 30px;
-      padding: 20px;
-      background: rgba(59, 130, 246, 0.1);
-      border-radius: 12px;
-      display: none; /* Hidden by default */
-      animation: float 0.5s ease-out;
+    .tag-free { background: #dcfce7; color: #15803d; }
+    
+    .card h3 { font-size: 1.5rem; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+    .card .price { font-size: 1.1rem; color: var(--text-light); margin-bottom: 20px; font-weight: 500; }
+    .card .features { list-style: none; margin-bottom: 30px; flex-grow: 1; }
+    .card .features li { padding-left: 25px; position: relative; margin-bottom: 8px; color: var(--text); font-size: 0.95rem; }
+    .card .features li::before {
+      content: "✓"; position: absolute; left: 0; color: var(--success); font-weight: bold;
     }
 
-    /* CARDS */
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 80px; }
-    .card { 
-      background: #1e293b; 
-      padding: 30px; 
-      border-radius: 20px; 
-      border-top: 5px solid #3b82f6;
-      transition: transform 0.3s; 
+    /* Buttons */
+    .btn {
+      display: block; width: 100%; text-align: center; padding: 14px; border-radius: 12px;
+      text-decoration: none; font-weight: 700; transition: all 0.2s;
     }
-    .card:hover { transform: translateY(-10px); background: #252f45; }
-    .card h3 { color: #fff; margin-bottom: 10px; font-size: 1.4em; }
-    .card p { color: #94a3b8; margin-bottom: 20px; }
-    .card a { color: #60a5fa; font-weight: bold; text-decoration: none; }
+    .btn-primary { background: var(--primary); color: white; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3); }
+    .btn-primary:hover { background: var(--primary-dark); transform: scale(1.02); }
 
-    /* TABLE */
-    .table-wrapper { overflow-x: auto; background: #1e293b; border-radius: 16px; padding: 10px; margin-bottom: 80px; }
-    table { width: 100%; border-collapse: collapse; min-width: 600px; }
-    th, td { padding: 15px; text-align: left; border-bottom: 1px solid #334155; color: #cbd5e1; }
-    th { color: #60a5fa; text-transform: uppercase; font-size: 0.85em; }
-
-    footer { text-align: center; color: #64748b; padding: 40px; font-size: 0.9em; }
-    footer a { color: #94a3b8; }
-
-    /* Mobile */
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 2.2em; }
-      .quiz-btn { width: 100%; }
-    }
+    /* Footer & FAQ */
+    .section-title { text-align: center; font-size: 2rem; margin: 60px 0 30px; }
+    .faq-grid { display: grid; gap: 15px; max-width: 700px; margin: 0 auto 60px; }
+    .faq-item { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+    .faq-item h4 { margin-bottom: 5px; color: var(--primary); }
+    
+    footer { text-align: center; font-size: 0.9rem; color: var(--text-light); padding-top: 20px; border-top: 1px solid #e2e8f0; margin-top: 40px; }
   </style>
 </head>
 <body>
 
-<div class="container">
-
   <!-- HERO -->
-  <div class="hero">
-    <div class="rocket-icon">🚀</div>
-    <h1>Create Invoices.<br>Done in 10 Seconds.</h1>
-    <p>Forget spreadsheets. These 7 AI tools automate everything.</p>
-    <a href="#quiz" class="cta-button" onclick="document.getElementById('quiz').scrollIntoView({behavior: 'smooth'})">Find My Tool →</a>
+  <header class="hero">
+    <span class="badge">🚀 Update: Januar 2026</span>
+    <h1>Nie wieder Rechnungs-Chaos.</h1>
+    <p>Die 7 besten KI-Tools für Freelancer im Vergleich. Spare Zeit, vermeide Fehler und wirke professioneller.</p>
+    
+    <div class="filter-container">
+      <button class="filter-btn active" onclick="filterSelection('all')">Alle anzeigen</button>
+      <button class="filter-btn" onclick="filterSelection('free')">💰 Kostenlos</button>
+      <button class="filter-btn" onclick="filterSelection('pro')">⭐ Profi-Suite</button>
+      <button class="filter-btn" onclick="filterSelection('mobile')">📱 Nur Mobil</button>
+    </div>
+  </header>
+
+  <!-- MAIN GRID -->
+  <div class="container">
+    <div class="grid">
+
+      <!-- TOOL 1: FreshBooks -->
+      <div class="card filter-item pro">
+        <span class="card-tag">Bestseller</span>
+        <h3>FreshBooks</h3>
+        <p class="price">Ab ca. 19€ / Monat (30 Tage Test)</p>
+        <ul class="features">
+          <li>KI-Buchhaltung & Auto-Mahnungen</li>
+          <li>Zeiterfassung integriert</li>
+          <li>Top für Freelancer & kleine Teams</li>
+        </ul>
+        <a href="https://freshbooks.com/?ref=DEINE_AFFILIATE_ID" target="_blank" class="btn btn-primary">Jetzt testen →</a>
+      </div>
+
+      <!-- TOOL 2: Wave -->
+      <div class="card filter-item free">
+        <span class="card-tag tag-free">Gratis</span>
+        <h3>Wave</h3>
+        <p class="price">0€ (Gebühren nur bei Zahlung)</p>
+        <ul class="features">
+          <li>Rechnungen schreiben komplett gratis</li>
+          <li>Basis-Buchhaltung inklusive</li>
+          <li>Ideal für den Start (Budget-Tipp)</li>
+        </ul>
+        <a href="https://waveapps.com/?ref=DEINE_AFFILIATE_ID" target="_blank" class="btn btn-primary">Kostenlos starten →</a>
+      </div>
+
+      <!-- TOOL 3: Invoyce -->
+      <div class="card filter-item mobile">
+        <span class="card-tag">Mobil-Tipp</span>
+        <h3>Invoyce</h3>
+        <p class="price">Nutzer: 0€ (Kunde zahlt Gebühr)</p>
+        <ul class="features">
+          <li>KI-Erstellung auf dem Handy</li>
+          <li>Extrem simpel für Solopreneure</li>
+          <li>Keine monatlichen Fixkosten</li>
+        </ul>
+        <a href="https://invoyce.ai/?ref=DEINE_AFFILIATE_ID" target="_blank" class="btn btn-primary">App ansehen →</a>
+      </div>
+
+      <!-- TOOL 4: Hello Bonsai -->
+      <div class="card filter-item pro">
+        <span class="card-tag">All-in-One</span>
+        <h3>Hello Bonsai</h3>
+        <p class="price">Ab ca. 24€ / Monat</p>
+        <ul class="features">
+          <li>Nicht nur Rechnungen: Verträge & CRM</li>
+          <li>Steuer- & Projektmanagement</li>
+          <li>Die "Business-Suite" für Kreative</li>
+        </ul>
+        <a href="https://hellobonsai.com/?ref=DEINE_AFFILIATE_ID" target="_blank" class="btn btn-primary">Suite ansehen →</a>
+      </div>
+
+      <!-- TOOL 5: Zoho Invoice -->
+      <div class="card filter-item free mobile">
+        <span class="card-tag tag-free">Geheimtipp</span>
+        <h3>Zoho Invoice</h3>
+        <p class="price">Dauerhaft kostenlos</p>
+        <ul class="features">
+          <li>Mächtige Automationen (Workflows)</li>
+          <li>Mehrwährungsfähig (International)</li>
+          <li>Teil des riesigen Zoho-Ökosystems</li>
+        </ul>
+        <a href="https://zoho.com/invoice/?ref=DEINE_AFFILIATE_ID" target="_blank" class="btn btn-primary">Zoho entdecken →</a>
+      </div>
+
+      <!-- TOOL 6: Invoicer.ai -->
+      <div class="card filter-item mobile">
+        <span class="card-tag">KI Speed</span>
+        <h3>Invoicer.ai</h3>
+        <p class="price">Günstige Flatrate</p>
+        <ul class="features">
+          <li>Reiner KI-Generator</li>
+          <li>Unbegrenzte Kunden & Rechnungen</li>
+          <li>Fokus auf Geschwindigkeit</li>
+        </ul>
+        <a href="https://invoicer.ai/?ref=DEINE_AFFILIATE_ID" target="_blank" class="btn btn-primary">Schnellstart →</a>
+      </div>
+
+      <!-- TOOL 7: QuickBooks -->
+      <div class="card filter-item pro">
+        <span class="card-tag">Marktführer</span>
+        <h3>QuickBooks</h3>
+        <p class="price">Ab ca. 10-25€ / Monat</p>
+        <ul class="features">
+          <li>Industrie-Standard Buchhaltung</li>
+          <li>Maximale Integrationen (Bank, Steuer)</li>
+          <li>KI-gestützte Kategorisierung</li>
+        </ul>
+        <a href="https://quickbooks.intuit.com/?ref=DEINE_AFFILIATE_ID" target="_blank" class="btn btn-primary">Angebote prüfen →</a>
+      </div>
+
+    </div>
   </div>
 
-  <!-- INTERACTIVE QUIZ -->
-  <div id="quiz" class="quiz-section">
-    <h2>🎯 I am a...</h2>
-    <div class="quiz-options">
-      <button class="quiz-btn" onclick="showResult('starter')">New Freelancer ($0 Budget)</button>
-      <button class="quiz-btn" onclick="showResult('pro')">Pro Freelancer (Scale)</button>
-      <button class="quiz-btn" onclick="showResult('nomad')">Digital Nomad (Mobile)</button>
+  <!-- FAQ SECTION -->
+  <div class="container">
+    <h2 class="section-title">Häufige Fragen (FAQ)</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h4>Welches Tool ist wirklich kostenlos?</h4>
+        <p>Wave und Zoho Invoice sind dauerhaft kostenlos für die Rechnungsstellung. Invoyce ist für dich kostenlos, wenn du die Gebühr an Kunden weitergibst.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Warum überhaupt KI nutzen?</h4>
+        <p>KI erkennt automatisch Kategorien, erinnert Kunden an Zahlungen und spart dir ca. 3-5 Stunden Verwaltung pro Monat.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Was ist das Beste für Profis?</h4>
+        <p>Wenn du wächst, sind FreshBooks oder Hello Bonsai (wegen Verträgen) die besten Investitionen.</p>
+      </div>
     </div>
-
-    <div id="recommendation">
-      <h3 id="rec-title" style="color:#60a5fa; margin-bottom:10px;"></h3>
-      <p id="rec-text" style="color:#e2e8f0; margin-bottom:15px;"></p>
-      <a id="rec-link" href="#" target="_blank" class="cta-button" style="padding:10px 20px; font-size:0.9em;">Get it now →</a>
-    </div>
-  </div>
-
-  <!-- CARDS -->
-  <div class="cards">
-    <div class="card">
-      <h3>💰 The Budget Saver</h3>
-      <p>Perfect for starting out. $0 cost.</p>
-      <a href="https://waveapps.com/?ref=YOURID">👉 Try Wave App</a>
-    </div>
-    <div class="card">
-      <h3>⭐ The Professional</h3>
-      <p>All-in-one: Accounting & Taxes.</p>
-      <a href="https://freshbooks.com/?ref=YOURID">👉 Try FreshBooks</a>
-    </div>
-    <div class="card">
-      <h3>🚀 The Nomad</h3>
-      <p>Invoices via WhatsApp & App.</p>
-      <a href="https://invoyce.ai/?ref=YOURID">👉 Try Invoyce</a>
-    </div>
-  </div>
-
-  <!-- TABLE -->
-  <h2 id="table" style="text-align:center; color:white; margin-bottom:30px;">📊 Comparison Table</h2>
-  <div class="table-wrapper">
-    <table>
-      <thead>
-        <tr><th>Tool</th><th>Price</th><th>Best for...</th><th>Rating</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><a href="https://freshbooks.com/?ref=YOURID" style="color:white; font-weight:bold;">FreshBooks</a></td><td>$19/mo</td><td>Pros</td><td>⭐⭐⭐⭐⭐</td></tr>
-        <tr><td><a href="https://waveapps.com/?ref=YOURID" style="color:white; font-weight:bold;">Wave</a></td><td>Free</td><td>Starters</td><td>⭐⭐⭐⭐</td></tr>
-        <tr><td><a href="https://invoyce.ai/?ref=YOURID" style="color:white; font-weight:bold;">Invoyce</a></td><td>$0</td><td>Mobile</td><td>⭐⭐⭐⭐</td></tr>
-        <tr><td><a href="https://hellobonsai.com/?ref=YOURID" style="color:white; font-weight:bold;">Bonsai</a></td><td>$17/mo</td><td>Contracts</td><td>⭐⭐⭐⭐⭐</td></tr>
-      </tbody>
-    </table>
   </div>
 
   <footer>
-    <p>Updated: Jan 2026 | <a href="mailto:dukatlogical@gmail.com">Contact</a></p>
-    <p style="font-size:0.8em; margin-top:10px;">Disclosure: Affiliate links used.</p>
+    <div class="container">
+      <p>Transparenz: Links sind Affiliate-Links. Für dich entstehen keine Mehrkosten, ich erhalte eine kleine Provision zur Erhaltung der Seite.</p>
+      <p>&copy; 2026 KI-Rechnungs-Tools. Made for Freelancers.</p>
+    </div>
   </footer>
 
-</div>
+  <!-- SIMPLE JAVASCRIPT FOR FILTER -->
+  <script>
+    function filterSelection(category) {
+      var x, i;
+      x = document.getElementsByClassName("filter-item");
+      var btns = document.getElementsByClassName("filter-btn");
+      
+      // Buttons aktiv schalten
+      for (i = 0; i < btns.length; i++) {
+        btns[i].classList.remove("active");
+        if(event.target == btns[i]) btns[i].classList.add("active");
+      }
 
-<script>
-  function showResult(type) {
-    const recBox = document.getElementById('recommendation');
-    const title = document.getElementById('rec-title');
-    const text = document.getElementById('rec-text');
-    const link = document.getElementById('rec-link');
-    
-    // Reset buttons
-    document.querySelectorAll('.quiz-btn').forEach(b => b.classList.remove('active'));
-    event.target.classList.add('active');
-
-    recBox.style.display = 'block';
-
-    if(type === 'starter') {
-      title.innerText = "🏆 Best Choice: Wave App";
-      text.innerText = "It's completely free and covers all basics perfectly.";
-      link.href = "https://waveapps.com/?ref=YOURID";
-    } else if(type === 'pro') {
-      title.innerText = "🏆 Best Choice: FreshBooks";
-      text.innerText = "Automates everything. Worth every penny for pros.";
-      link.href = "https://freshbooks.com/?ref=YOURID";
-    } else if(type === 'nomad') {
-      title.innerText = "🏆 Best Choice: Invoyce";
-      text.innerText = "Super fast mobile invoicing. Ideal for travel.";
-      link.href = "https://invoyce.ai/?ref=YOURID";
+      if (category == "all") category = "";
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none"; // Erstmal alle ausblenden
+        if (x[i].className.indexOf(category) > -1) {
+          x[i].style.display = "flex"; // Passende einblenden
+          // Animation resetten
+          x[i].style.opacity = "0";
+          x[i].style.transform = "translateY(20px)";
+          setTimeout((function(el) {
+            return function() {
+              el.style.opacity = "1";
+              el.style.transform = "translateY(0)";
+            };
+          })(x[i]), 50);
+        }
+      }
     }
-  }
-</script>
-
+    // Initiale Animation
+    filterSelection('all');
+  </script>
 </body>
 </html>
