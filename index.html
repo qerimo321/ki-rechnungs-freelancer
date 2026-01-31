@@ -11,274 +11,143 @@
     body { 
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
       line-height: 1.6; 
-      background-color: #0f172a; /* Deep Slate */
+      background-color: #0f172a; 
       color: #e2e8f0; 
       font-size: 16px;
       overflow-x: hidden;
     }
-    
-    /* Animation Keyframes */
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+
+    /* Animations */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
     }
-    @keyframes pulseGlow {
-      0% { box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3); }
-      50% { box-shadow: 0 10px 30px rgba(59, 130, 246, 0.6); }
-      100% { box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3); }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+      70% { box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
     }
 
     .container {
       max-width: 900px; 
       margin: 0 auto; 
-      padding: 40px 20px; 
+      padding: 20px; 
     }
 
-    /* Modern Hero Section */
+    /* INTERACTIVE HERO */
     .hero { 
-      background: linear-gradient(135deg, #1e293b 0%, #172554 100%); 
+      background: radial-gradient(circle at top right, #1e293b 0%, #0f172a 100%); 
       color: #f8fafc; 
       text-align: center; 
-      padding: 100px 30px; /* Mehr Platz */
+      padding: 80px 20px; 
       border-radius: 30px; 
-      margin-bottom: 80px; 
-      border: 1px solid rgba(51, 65, 85, 0.5); 
-      box-shadow: 0 0 60px rgba(59, 130, 246, 0.1); 
+      margin: 40px 0 80px 0;
+      border: 1px solid rgba(148, 163, 184, 0.1); 
       position: relative;
       overflow: hidden;
-      animation: fadeInUp 0.8s ease-out;
     }
     
-    /* Background Glow Effect behind Hero */
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, rgba(0,0,0,0) 70%);
-      z-index: 0;
-      pointer-events: none;
+    .rocket-icon {
+      font-size: 4em;
+      display: inline-block;
+      animation: float 3s ease-in-out infinite;
+      margin-bottom: 20px;
     }
-
-    .hero-content { position: relative; z-index: 1; }
 
     .hero h1 { 
-      font-size: 3.2em; /* Größer */
-      margin-bottom: 25px; 
+      font-size: 2.8em; 
+      margin-bottom: 20px; 
       line-height: 1.1;
       font-weight: 800;
-      background: linear-gradient(to right, #60a5fa, #93c5fd, #e0f2fe);
+      background: linear-gradient(135deg, #fff 30%, #60a5fa 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      letter-spacing: -0.02em;
-    }
-    .hero p {
-      font-size: 1.3em;
-      opacity: 0.9;
-      max-width: 650px;
-      margin: 0 auto 40px auto;
-      color: #cbd5e1;
-      font-weight: 400;
     }
     
     .cta-button { 
       background: #3b82f6; 
       color: white; 
-      padding: 20px 45px; 
-      border: none; 
+      padding: 18px 40px; 
       border-radius: 50px; 
-      font-size: 1.15em; 
+      font-size: 1.1em; 
       font-weight: 700; 
       text-decoration: none; 
       display: inline-block; 
-      box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3); 
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      animation: pulseGlow 3s infinite;
-    }
-    .cta-button:hover { 
-      transform: translateY(-4px) scale(1.02); 
-      background: #2563eb;
-    }
-
-    h2 { 
-      font-size: 2.2em; 
-      margin-bottom: 40px; 
-      text-align: center; 
-      color: #f8fafc; 
-      font-weight: 700;
-      letter-spacing: -0.01em;
-    }
-
-    /* Feature Grid with Hover Lift */
-    .why-ai {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-      margin-bottom: 100px;
-    }
-    .benefit {
-      background: rgba(30, 41, 59, 0.7); /* Glass-like opacity */
-      backdrop-filter: blur(10px);
-      padding: 35px 30px;
-      border-radius: 20px;
-      text-align: center;
-      border: 1px solid #334155;
-      transition: all 0.3s ease;
-    }
-    .benefit:hover { 
-      transform: translateY(-8px); 
-      border-color: #60a5fa; 
-      background: rgba(30, 41, 59, 1);
-    }
-    .benefit-icon { font-size: 3em; margin-bottom: 20px; display: block; }
-    .benefit h3 { font-size: 1.3em; margin-bottom: 12px; color: #f1f5f9; }
-    .benefit p { font-size: 1em; color: #94a3b8; line-height: 1.6; }
-
-    /* Cards with Glow Borders */
-    .cards { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px; 
-      margin-bottom: 100px; 
-    }
-    .card { 
-      background: #1e293b; 
-      padding: 40px 30px; 
-      border-radius: 24px; 
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
-      border-top: 6px solid; 
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      border-left: 1px solid #334155; 
-      border-right: 1px solid #334155; 
-      border-bottom: 1px solid #334155; 
-      position: relative;
-    }
-    .card:hover { 
-      transform: translateY(-10px); 
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); 
-    }
-    
-    .card.light-blue { border-top-color: #60a5fa; } 
-    .card.steel { border-top-color: #94a3b8; }     
-    .card.dark-blue { border-top-color: #3b82f6; }  
-    
-    /* Make the top border glow on hover */
-    .card:hover.light-blue { box-shadow: 0 20px 40px rgba(96, 165, 250, 0.15); }
-    .card:hover.dark-blue { box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15); }
-
-    .card h3 { margin-bottom: 15px; color: #f8fafc; font-size: 1.5em; font-weight: 700; }
-    .card p { margin-bottom: 25px; color: #94a3b8; line-height: 1.7; }
-    
-    .card-links a { 
-      color: #60a5fa; 
-      font-weight: 700; 
-      text-decoration: none; 
-      margin-right: 15px;
-      display: inline-block;
-      transition: color 0.2s;
-    }
-    .card-links a:hover { color: #bfdbfe; text-decoration: underline; }
-
-    /* Modern Table with Sticky Header */
-    .table-container {
-      margin-bottom: 100px;
-      position: relative;
-    }
-    .table-wrapper {
-      background: #1e293b;
-      border-radius: 20px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-      padding: 0; /* Removed padding for flush look */
-      overflow: hidden; /* Rounded corners clip content */
-      border: 1px solid #334155;
-      overflow-x: auto;
-    }
-    table { 
-      width: 100%; 
-      border-collapse: collapse; 
-      min-width: 700px;
-    }
-    th, td { padding: 22px 25px; text-align: left; border-bottom: 1px solid #334155; }
-    
-    th { 
-      background: #0f172a; 
-      color: #94a3b8; 
-      text-transform: uppercase; 
-      font-size: 0.8em; 
-      letter-spacing: 0.1em; 
-      font-weight: 700;
-      position: sticky; /* Sticky Header */
-      top: 0;
-      z-index: 10;
-    }
-    
-    tr:last-child td { border-bottom: none; }
-    td { color: #e2e8f0; font-size: 1.05em; }
-    td a { 
-      color: #60a5fa; 
-      font-weight: 600; 
-      text-decoration: none; 
-      transition: opacity 0.2s;
-    }
-    td a:hover { opacity: 0.8; }
-    tr { transition: background-color 0.2s; }
-    tr:hover td { background-color: rgba(51, 65, 85, 0.4); }
-
-    /* Decision Helper */
-    .decision-helper {
-      background: #1e293b;
-      border-radius: 24px;
-      padding: 60px 30px;
-      text-align: center;
-      margin-bottom: 60px;
-      border: 1px solid #334155;
-      background-image: radial-gradient(circle at top right, rgba(59,130,246,0.05), transparent 40%);
-    }
-    .decision-helper h2 { margin-bottom: 15px; color: #f8fafc; }
-    .decision-helper p { font-size: 1.2em; max-width: 600px; margin: 0 auto 40px; }
-    
-    .decision-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 25px;
-    }
-    .decision-item {
-      background: #0f172a;
-      padding: 20px 30px;
-      border-radius: 16px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      font-weight: 500;
-      color: #cbd5e1;
-      border: 1px solid #334155;
-      min-width: 200px;
+      margin-top: 30px;
+      animation: pulse 2s infinite;
       transition: transform 0.2s;
     }
-    .decision-item:hover { transform: translateY(-3px); border-color: #475569; }
-    .decision-item strong { display: block; color: #60a5fa; margin-bottom: 8px; font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.05em; }
-    .decision-item a { color: #f1f5f9; text-decoration: none; border-bottom: 1px dotted #64748b; }
+    .cta-button:hover { transform: scale(1.05); }
 
-    footer { 
-      text-align: center; 
-      padding: 50px 20px; 
-      border-top: 1px solid #334155;
-      color: #64748b;
-      font-size: 0.95em; 
+    /* INTERACTIVE QUIZ SECTION */
+    .quiz-section {
+      background: #1e293b;
+      padding: 40px;
+      border-radius: 24px;
+      text-align: center;
+      margin-bottom: 80px;
+      border: 1px solid #334155;
     }
-    footer a { color: #94a3b8; transition: color 0.2s; }
-    footer a:hover { color: #e2e8f0; }
+    .quiz-options {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+    .quiz-btn {
+      background: #0f172a;
+      border: 1px solid #475569;
+      color: #e2e8f0;
+      padding: 15px 25px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: all 0.2s;
+    }
+    .quiz-btn:hover, .quiz-btn.active {
+      background: #3b82f6;
+      border-color: #3b82f6;
+      color: white;
+      transform: translateY(-2px);
+    }
+    #recommendation {
+      margin-top: 30px;
+      padding: 20px;
+      background: rgba(59, 130, 246, 0.1);
+      border-radius: 12px;
+      display: none; /* Hidden by default */
+      animation: float 0.5s ease-out;
+    }
 
-    @media (max-width: 600px) { 
-      .hero { padding: 60px 20px; }
-      .hero h1 { font-size: 2.2em; } 
-      .hero p { font-size: 1.1em; }
-      td, th { padding: 15px; }
+    /* CARDS */
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 80px; }
+    .card { 
+      background: #1e293b; 
+      padding: 30px; 
+      border-radius: 20px; 
+      border-top: 5px solid #3b82f6;
+      transition: transform 0.3s; 
+    }
+    .card:hover { transform: translateY(-10px); background: #252f45; }
+    .card h3 { color: #fff; margin-bottom: 10px; font-size: 1.4em; }
+    .card p { color: #94a3b8; margin-bottom: 20px; }
+    .card a { color: #60a5fa; font-weight: bold; text-decoration: none; }
+
+    /* TABLE */
+    .table-wrapper { overflow-x: auto; background: #1e293b; border-radius: 16px; padding: 10px; margin-bottom: 80px; }
+    table { width: 100%; border-collapse: collapse; min-width: 600px; }
+    th, td { padding: 15px; text-align: left; border-bottom: 1px solid #334155; color: #cbd5e1; }
+    th { color: #60a5fa; text-transform: uppercase; font-size: 0.85em; }
+
+    footer { text-align: center; color: #64748b; padding: 40px; font-size: 0.9em; }
+    footer a { color: #94a3b8; }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2.2em; }
+      .quiz-btn { width: 100%; }
     }
   </style>
 </head>
@@ -288,121 +157,98 @@
 
   <!-- HERO -->
   <div class="hero">
-    <div class="hero-content">
-      <h1>🚀 Create Invoices.<br>Done in 10 Seconds.</h1>
-      <p>Forget spreadsheets. These 7 AI tools fully automate your bookkeeping – from free to premium.</p>
-      <a href="#table" class="cta-button">Compare Tools →</a>
+    <div class="rocket-icon">🚀</div>
+    <h1>Create Invoices.<br>Done in 10 Seconds.</h1>
+    <p>Forget spreadsheets. These 7 AI tools automate everything.</p>
+    <a href="#quiz" class="cta-button" onclick="document.getElementById('quiz').scrollIntoView({behavior: 'smooth'})">Find My Tool →</a>
+  </div>
+
+  <!-- INTERACTIVE QUIZ -->
+  <div id="quiz" class="quiz-section">
+    <h2>🎯 I am a...</h2>
+    <div class="quiz-options">
+      <button class="quiz-btn" onclick="showResult('starter')">New Freelancer ($0 Budget)</button>
+      <button class="quiz-btn" onclick="showResult('pro')">Pro Freelancer (Scale)</button>
+      <button class="quiz-btn" onclick="showResult('nomad')">Digital Nomad (Mobile)</button>
+    </div>
+
+    <div id="recommendation">
+      <h3 id="rec-title" style="color:#60a5fa; margin-bottom:10px;"></h3>
+      <p id="rec-text" style="color:#e2e8f0; margin-bottom:15px;"></p>
+      <a id="rec-link" href="#" target="_blank" class="cta-button" style="padding:10px 20px; font-size:0.9em;">Get it now →</a>
     </div>
   </div>
 
-  <!-- WHY AI? -->
-  <h2>💡 Why handle it manually in 2026?</h2>
-  <div class="why-ai">
-    <div class="benefit">
-      <span class="benefit-icon">⏱️</span>
-      <h3>Save Time</h3>
-      <p>AI writes invoices, reminders, and thank-you emails automatically. Save 5h/week.</p>
-    </div>
-    <div class="benefit">
-      <span class="benefit-icon">💸</span>
-      <h3>Get Paid Faster</h3>
-      <p>Automated "Payment Reminders" ensure clients pay up to 3x faster.</p>
-    </div>
-    <div class="benefit">
-      <span class="benefit-icon">⚖️</span>
-      <h3>Stay Compliant</h3>
-      <p>Tax rates and legal requirements? The AI keeps everything updated automatically.</p>
-    </div>
-  </div>
-
-  <!-- TOP 3 CARDS -->
-  <h2>🔥 Our Top Picks</h2>
+  <!-- CARDS -->
   <div class="cards">
-    <div class="card light-blue">
-      <div>
-        <h3>💰 The Budget Saver</h3>
-        <p>Perfect for starting out. $0 cost, but full functionality.</p>
-      </div>
-      <div class="card-links">
-        <a href="https://waveapps.com/?ref=YOURID">📱 Wave App</a>
-        <a href="https://zoho.com/invoice/?ref=YOURID">🌍 Zoho Invoice</a>
-      </div>
+    <div class="card">
+      <h3>💰 The Budget Saver</h3>
+      <p>Perfect for starting out. $0 cost.</p>
+      <a href="https://waveapps.com/?ref=YOURID">👉 Try Wave App</a>
     </div>
-    <div class="card steel">
-      <div>
-        <h3>⭐ The Professional</h3>
-        <p>The all-in-one package. Accounting, time tracking & taxes.</p>
-      </div>
-      <div class="card-links">
-        <a href="https://freshbooks.com/?ref=YOURID">⚡ FreshBooks</a>
-        <a href="https://quickbooks.com/?ref=YOURID">📊 QuickBooks</a>
-      </div>
+    <div class="card">
+      <h3>⭐ The Professional</h3>
+      <p>All-in-one: Accounting & Taxes.</p>
+      <a href="https://freshbooks.com/?ref=YOURID">👉 Try FreshBooks</a>
     </div>
-    <div class="card dark-blue">
-      <div>
-        <h3>🚀 The Nomad</h3>
-        <p>Send invoices via WhatsApp or App? Right this way.</p>
-      </div>
-      <div class="card-links">
-        <a href="https://invoyce.ai/?ref=YOURID">⚡ Invoyce</a>
-        <a href="https://invoicer.ai/?ref=YOURID">🤖 Invoicer.ai</a>
-      </div>
+    <div class="card">
+      <h3>🚀 The Nomad</h3>
+      <p>Invoices via WhatsApp & App.</p>
+      <a href="https://invoyce.ai/?ref=YOURID">👉 Try Invoyce</a>
     </div>
   </div>
 
   <!-- TABLE -->
-  <h2 id="table">📊 All 7 Tools Compared</h2>
-  <div class="table-container">
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr>
-            <th>Tool</th>
-            <th>Price/Month</th>
-            <th>Best for...</th>
-            <th>⭐ Rating</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td><a href="https://freshbooks.com/?ref=YOURID">FreshBooks</a></td><td>from $19 (30d free)</td><td>Pro Freelancers</td><td>4.8</td></tr>
-          <tr><td><a href="https://waveapps.com/?ref=YOURID">Wave</a></td><td><strong>Free</strong></td><td>Starters & Solos</td><td>4.5</td></tr>
-          <tr><td><a href="https://invoyce.ai/?ref=YOURID">Invoyce</a></td><td>$0 (Client fee)</td><td>Mobile Use</td><td>4.7</td></tr>
-          <tr><td><a href="https://invoicer.ai/?ref=YOURID">Invoicer.ai</a></td><td>approx. $10</td><td>Speed</td><td>4.6</td></tr>
-          <tr><td><a href="https://zoho.com/?ref=YOURID">Zoho Invoice</a></td><td>Free</td><td>International</td><td>4.4</td></tr>
-          <tr><td><a href="https://hellobonsai.com/?ref=YOURID">Bonsai</a></td><td>from $17</td><td>Contracts & Proposals</td><td>4.9</td></tr>
-          <tr><td><a href="https://quickbooks.com/?ref=YOURID">QuickBooks</a></td><td>from $25</td><td>Accounting</td><td>4.7</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <!-- DECISION HELPER -->
-  <div class="decision-helper">
-    <h2>🎯 Which tool is right for me?</h2>
-    <p>Don't overcomplicate it. Here is our simple rule of thumb:</p>
-    
-    <div class="decision-grid">
-      <div class="decision-item">
-        <strong>Just starting out?</strong>
-        Pick <a href="#">Wave</a>
-      </div>
-      <div class="decision-item">
-        <strong>Ready to scale?</strong>
-        Pick <a href="#">FreshBooks</a>
-      </div>
-      <div class="decision-item">
-        <strong>Need Contracts?</strong>
-        Pick <a href="#">Bonsai</a>
-      </div>
-    </div>
+  <h2 id="table" style="text-align:center; color:white; margin-bottom:30px;">📊 Comparison Table</h2>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr><th>Tool</th><th>Price</th><th>Best for...</th><th>Rating</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><a href="https://freshbooks.com/?ref=YOURID" style="color:white; font-weight:bold;">FreshBooks</a></td><td>$19/mo</td><td>Pros</td><td>⭐⭐⭐⭐⭐</td></tr>
+        <tr><td><a href="https://waveapps.com/?ref=YOURID" style="color:white; font-weight:bold;">Wave</a></td><td>Free</td><td>Starters</td><td>⭐⭐⭐⭐</td></tr>
+        <tr><td><a href="https://invoyce.ai/?ref=YOURID" style="color:white; font-weight:bold;">Invoyce</a></td><td>$0</td><td>Mobile</td><td>⭐⭐⭐⭐</td></tr>
+        <tr><td><a href="https://hellobonsai.com/?ref=YOURID" style="color:white; font-weight:bold;">Bonsai</a></td><td>$17/mo</td><td>Contracts</td><td>⭐⭐⭐⭐⭐</td></tr>
+      </tbody>
+    </table>
   </div>
 
   <footer>
-    <p><strong>Disclosure:</strong> This site uses affiliate links. As an associate, I earn from qualifying purchases at no extra cost to you. Thank you for your support! ❤️</p>
-    <p style="margin-top:10px; font-size:0.85em">Updated: Jan 2026 | <a href="mailto:dukatlogical@gmail.com">Contact</a></p>
+    <p>Updated: Jan 2026 | <a href="mailto:dukatlogical@gmail.com">Contact</a></p>
+    <p style="font-size:0.8em; margin-top:10px;">Disclosure: Affiliate links used.</p>
   </footer>
 
-</div> <!-- End Container -->
+</div>
+
+<script>
+  function showResult(type) {
+    const recBox = document.getElementById('recommendation');
+    const title = document.getElementById('rec-title');
+    const text = document.getElementById('rec-text');
+    const link = document.getElementById('rec-link');
+    
+    // Reset buttons
+    document.querySelectorAll('.quiz-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+
+    recBox.style.display = 'block';
+
+    if(type === 'starter') {
+      title.innerText = "🏆 Best Choice: Wave App";
+      text.innerText = "It's completely free and covers all basics perfectly.";
+      link.href = "https://waveapps.com/?ref=YOURID";
+    } else if(type === 'pro') {
+      title.innerText = "🏆 Best Choice: FreshBooks";
+      text.innerText = "Automates everything. Worth every penny for pros.";
+      link.href = "https://freshbooks.com/?ref=YOURID";
+    } else if(type === 'nomad') {
+      title.innerText = "🏆 Best Choice: Invoyce";
+      text.innerText = "Super fast mobile invoicing. Ideal for travel.";
+      link.href = "https://invoyce.ai/?ref=YOURID";
+    }
+  }
+</script>
 
 </body>
 </html>
