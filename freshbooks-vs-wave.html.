@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FreshBooks vs. Wave - Which is better in 2026?</title>
+<style>
+/* ... Kopiere den CSS Block aus index.html hier rein ... */
+.vs-header { padding: 80px 20px; text-align: center; }
+.vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+@media(max-width:768px){ .vs-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="container">
+    <a href="index.html" style="color:var(--accent); text-decoration:none;">← Back to Overview</a>
+
+    <div class="vs-header">
+        <h1>FreshBooks vs. Wave</h1>
+        <p>The Ultimate Comparison: Paid Automation vs. Free Simplicity</p>
+    </div>
+
+    <div class="vs-grid">
+        <div class="card">
+            <h2>FreshBooks</h2>
+            <p class="price-tag">$19/mo</p>
+            <p><strong>Best for:</strong> Growing businesses that need to save time.</p>
+            <ul>
+                <li>✅ Automated Retainers</li>
+                <li>✅ Phone Support</li>
+                <li>❌ Monthly Cost</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h2>Wave</h2>
+            <p class="price-tag" style="background:var(--success); color:#000;">FREE</p>
+            <p><strong>Best for:</strong> Hobbyists & Solopreneurs just starting.</p>
+            <ul>
+                <li>✅ 100% Free</li>
+                <li>✅ Unlimited Invoicing</li>
+                <li>❌ No Phone Support</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
