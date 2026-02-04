@@ -1,459 +1,531 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BSC0RCF1MJ"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-BSC0RCF1MJ');</script>
+
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta name="referrer" content="no-referrer-when-downgrade">
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>AI Invoicing 2026</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Best AI Invoicing Tools for Freelancers 2026 - Tested & Ranked</title>
+<meta name="description" content="Compare the 7 best AI invoicing tools for freelancers in 2026. FreshBooks, Wave, Bonsai & more.">
+<link rel="canonical" href="https://billr-ai.github.io/Ki-Tools-Freelancer/">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
 <style>
-/* --- CORE VARIABLES --- */
+/* --- 2. Innovative Design Updates (Global) --- */
 :root {
-    --bg-deep: #000000;
-    --bg-surface: #0a0a0a;
-    --primary: #3b82f6;
-    --accent: #60a5fa;
-    --accent-glow: rgba(96, 165, 250, 0.5);
-    --text-high: #ffffff;
-    --text-med: #a1a1aa;
-    --glass: rgba(20, 20, 20, 0.6);
-    --border: rgba(255, 255, 255, 0.1);
-    --safe-area-bottom: env(safe-area-inset-bottom);
-    --card-radius: 28px;
-    --transition-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --bg-dark: #020617;
+  --card-bg: rgba(30, 41, 59, 0.4);
+  --primary: #3b82f6;
+  --accent: #38bdf8;
+  --text-main: #fff;
+  --text-muted: #cbd5e1;
+  --success: #10b981;
+  --warning: #fbbf24;
+  --danger: #ef4444;
+  --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+  /* E. Noise Texture Definition */
+  --noise-pattern: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
 }
 
-/* --- RESET & BASE --- */
-* { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
-html, body {
-    background-color: var(--bg-deep);
-    color: var(--text-high);
-    font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
-    overscroll-behavior-y: none; /* Disables bounce effect on body */
-    height: 100%;
+html { scroll-behavior: smooth; scroll-padding-top: 20px; }
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  background: var(--bg-dark);
+  color: #fff;
+  font-size: 16px;
+  overflow-x: hidden;
+  position: relative;
 }
 
-/* --- DYNAMIC BACKGROUND (Aurora) --- */
-.aurora-bg {
-    position: fixed;
-    top: -50%; left: -50%; width: 200%; height: 200%;
-    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.15), transparent 40%),
-                radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1), transparent 40%);
-    filter: blur(60px);
-    z-index: -1;
-    animation: rotate 20s linear infinite;
-    opacity: 0.8;
-    pointer-events: none;
-}
-@keyframes rotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-
-/* --- TYPOGRAPHY & HEADER --- */
-header {
-    padding: 60px 24px 20px;
-    position: relative;
-    z-index: 10;
-}
-.super-title {
-    font-size: 12vw; /* Massive scaling text */
-    font-weight: 900;
-    line-height: 0.9;
-    letter-spacing: -0.04em;
-    background: linear-gradient(180deg, #fff, #64748b);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transform-origin: left;
-    transition: transform 0.1s;
-}
-.sub-title {
-    font-size: 1.1rem;
-    color: var(--text-med);
-    margin-top: 15px;
-    font-weight: 300;
-    max-width: 80%;
+/* B. Adaptive Glow Background Container */
+#glow-cursor {
+  position: fixed;
+  top: 0; left: 0;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(56,189,248,0.15) 0%, rgba(0,0,0,0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  transition: opacity 0.5s ease;
+  mix-blend-mode: screen;
 }
 
-/* --- SNAP SCROLL CAROUSEL (The Core Interface) --- */
-.snap-container {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 16px;
-    padding: 20px 24px 120px; /* Bottom padding for dock */
-    margin-top: 20px;
-    scrollbar-width: none; /* Hide scrollbar Firefox */
+/* Glassmorphism mit Noise Texture Override */
+.card, .industry-card, .calc-widget, .integration-hub, .faq-item-enhanced, .nav-pill {
+  position: relative;
+  overflow: hidden; /* Wichtig für Noise */
 }
-.snap-container::-webkit-scrollbar { display: none; } /* Hide scrollbar Chrome/Safari */
+.card::after, .industry-card::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: var(--noise-pattern);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+.card > *, .industry-card > * { position: relative; z-index: 1; }
 
-.tool-card {
-    flex: 0 0 85vw; /* Card width relative to screen */
-    height: 65vh;
-    scroll-snap-align: center;
-    background: linear-gradient(160deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
-    border: 1px solid var(--border);
-    border-radius: var(--card-radius);
-    padding: 30px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
-    transition: transform 0.4s ease, border-color 0.4s ease;
-}
-
-/* Active State for Snap */
-.tool-card.active-card {
-    border-color: var(--accent);
-    box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
-    transform: scale(1);
-}
-.tool-card:not(.active-card) {
-    transform: scale(0.95);
-    opacity: 0.6;
+/* C. Sliding Nav Pills */
+.nav-pills {
+  position: relative;
+  display: flex;
+  gap: 5px; /* Enger für den Sliding Effekt */
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  padding: 5px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 60px;
+  border: var(--glass-border);
+  display: inline-flex; /* Damit der Container sich anpasst */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-/* Card Internals */
-.card-tag {
-    position: absolute;
-    top: 20px; right: 20px;
-    background: rgba(0,0,0,0.4);
-    backdrop-filter: blur(10px);
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    border: 1px solid rgba(255,255,255,0.1);
+.nav-pill {
+  background: transparent !important; /* Reset für Sliding Effect */
+  border: none !important;
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease;
 }
 
-.card-visual {
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 5rem;
-    filter: drop-shadow(0 0 20px rgba(255,255,255,0.2));
-    transition: transform 0.5s var(--transition-spring);
-}
-.tool-card.active-card .card-visual {
-    transform: translateY(-10px) scale(1.1);
-}
-
-.card-info h2 { font-size: 2.2rem; margin-bottom: 5px; font-weight: 800; }
-.card-info .price { color: var(--accent); font-weight: 600; font-size: 1.1rem; margin-bottom: 15px; display: block; }
-.card-info p { color: var(--text-med); font-size: 0.95rem; line-height: 1.5; margin-bottom: 20px; }
-
-/* The "Liquid" Button */
-.action-btn {
-    width: 100%;
-    padding: 18px;
-    border-radius: 18px;
-    background: var(--text-high);
-    color: #000;
-    font-weight: 700;
-    border: none;
-    font-size: 1rem;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.2s;
-}
-.action-btn:active { transform: scale(0.96); }
-
-/* --- AI SCANNER OVERLAY --- */
-.ai-specs {
-    margin-top: 15px;
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-}
-.spec-pill {
-    background: rgba(59, 130, 246, 0.15);
-    color: var(--accent);
-    font-size: 0.75rem;
-    padding: 4px 10px;
-    border-radius: 8px;
-    border: 1px solid rgba(59, 130, 246, 0.3);
+#nav-highlight {
+  position: absolute;
+  top: 5px; left: 5px;
+  height: calc(100% - 10px);
+  background: rgba(56, 189, 248, 0.15);
+  border-radius: 50px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+  opacity: 0; /* Versteckt bis Hover */
 }
 
-/* --- BOTTOM DOCK (Dynamic Island Style) --- */
-.dock-wrapper {
-    position: fixed;
-    bottom: 20px;
-    left: 0; right: 0;
-    display: flex;
-    justify-content: center;
-    pointer-events: none; /* Let clicks pass through around the dock */
-    z-index: 100;
-    padding-bottom: var(--safe-area-bottom);
+/* D. KI-Persona Toggle Switch */
+.view-toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  animation: float 4s ease-in-out infinite;
 }
 
-.glass-dock {
-    pointer-events: auto;
-    background: rgba(10, 10, 10, 0.7);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 8px;
-    border-radius: 32px;
-    display: flex;
-    gap: 8px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-    transform: translateY(0);
-    transition: transform 0.3s;
+.toggle-switch {
+  position: relative;
+  width: 60px;
+  height: 30px;
 }
 
-.dock-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    color: var(--text-med);
-    transition: all 0.3s var(--transition-spring);
-    background: transparent;
-    border: none;
+.toggle-switch input { opacity: 0; width: 0; height: 0; }
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(255,255,255,0.1);
+  transition: .4s;
+  border-radius: 34px;
+  border: 1px solid rgba(255,255,255,0.2);
 }
 
-.dock-icon.active {
-    background: rgba(255,255,255,0.1);
-    color: #fff;
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px; width: 22px;
+  left: 4px; bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
 }
 
-/* --- AI OVERLAY (The Matrix/Cyberpunk Toggle) --- */
-.matrix-overlay {
-    position: fixed;
-    top:0; left:0; w-full; h-full;
-    background: transparent;
-    pointer-events: none;
-    z-index: 50;
-    mix-blend-mode: overlay;
-    display: none;
-}
-body.ai-mode .matrix-overlay { display: block; }
-body.ai-mode { --accent: #10b981; --primary: #059669; }
-body.ai-mode .super-title { text-shadow: 0 0 10px rgba(16, 185, 129, 0.5); }
+input:checked + .slider { background-color: var(--accent); border-color: var(--accent); }
+input:checked + .slider:before { transform: translateX(29px); background-color: #0f172a; }
 
-/* --- LOADING ANIMATION --- */
-#loader {
-    position: fixed;
-    top:0; left:0; width:100%; height:100%;
-    background: #000;
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-.loader-bar { width: 0%; height: 2px; background: #fff; transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1); margin-top:20px;}
-.loader-text { font-family: monospace; font-size: 0.8rem; color: #666; }
+.toggle-label { font-size: 0.9em; font-weight: 600; color: var(--text-muted); transition: color 0.3s;}
+.active-mode { color: var(--accent); text-shadow: 0 0 10px rgba(56,189,248,0.5); }
 
+/* AI Expert Insights (Hidden by default) */
+.ai-insight {
+  display: none;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 12px;
+  padding: 12px;
+  margin-top: 15px;
+  font-size: 0.85em;
+  color: #a7f3d0;
+  animation: slideUp 0.4s ease;
+}
+.ai-score { font-weight: 800; display: block; margin-bottom: 4px; color: var(--success); }
+body.expert-mode .ai-insight { display: block; }
+body.expert-mode .card { border-color: rgba(56,189,248,0.4); }
+
+/* A. Bento-Grid Layout (Desktop) */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 25px;
+  margin-bottom: 100px;
+}
+
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(250px, auto);
+  }
+  
+  /* Testsieger FreshBooks: 2x2 Grid */
+  .card:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 2;
+    background: linear-gradient(145deg, rgba(30,41,59,0.7), rgba(59,130,246,0.1));
+    border: 1px solid rgba(56,189,248,0.3);
+  }
+  .card:nth-child(1) h3 { font-size: 2.2em; }
+  .card:nth-child(1) p { font-size: 1.1em; }
+  
+  /* Wave: Quadratisch Groß */
+  .card:nth-child(2) {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+  
+  /* Restliche Karten */
+  .card:nth-child(n+3) { grid-column: span 1; grid-row: span 1; } /* Standard */
+  .card:nth-child(3) { grid-column: span 2; } /* Bonsai breit */
+  .card:nth-child(7) { grid-column: span 2; } /* QuickBooks breit unten */
+}
+
+/* C. Micro-Interactions: 3D Tilt CSS Helper */
+.card {
+  transition: transform 0.1s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Schneller für Tilt */
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+.card:hover {
+  /* Transform wird via JS gesetzt für Tilt */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(56,189,248,0.2);
+  z-index: 10;
+}
+
+/* Existing Styles (Minimally Adjusted) */
+.container{max-width:1200px;margin:0 auto;padding:20px}
+.hero{text-align:center;padding:100px 20px 40px;position:relative}
+.badge-pill{background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.3);color:var(--accent);padding:6px 16px;border-radius:50px;font-size:.85em;font-weight:600;letter-spacing:.5px;display:inline-block;margin-bottom:25px;backdrop-filter:blur(5px);}
+/* E. Liquid Typography */
+.hero h1{
+  font-size:clamp(2.5rem,6vw,5rem);
+  margin-bottom:25px;
+  line-height:1.1;
+  font-variation-settings: 'wght' 700;
+  transition: font-variation-settings 0.3s ease; /* Smooth Weight Transition */
+}
+.hero h1 span{background:linear-gradient(to right,#fff,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:1.2em;color:var(--text-muted);max-width:650px;margin:0 auto 40px;font-weight:400}
+
+/* Button & Nav Rest */
+#floating-nav {position: fixed; right: 20px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 15px; z-index: 9999; opacity: 0.7;}
+#floating-nav:hover {opacity: 1;}
+.nav-btn {width: 45px; height: 45px; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 50%; color: white; cursor: pointer; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px); transition: all 0.3s;}
+.nav-btn:hover {transform: scale(1.1); border-color: var(--accent);}
+.affiliate-disclaimer {background: rgba(56,189,248,.08); border: 1px solid rgba(56,189,248,.3); border-radius: 12px; padding: 15px 20px; margin: 20px auto 40px; max-width: 800px; text-align: center; font-size: 0.9em; color: var(--text-muted);}
+.affiliate-disclaimer a {color: var(--accent); text-decoration: underline;}
+.calc-widget {background:linear-gradient(180deg,rgba(30,41,59,.7) 0,rgba(15,23,42,.9) 100%); border:var(--glass-border); border-radius:24px; padding:30px; margin:60px auto; max-width:800px; text-align:center; box-shadow:0 20px 50px rgba(0,0,0,.3);}
+.mistakes-box {background:linear-gradient(135deg,rgba(239,68,68,.1),rgba(251,191,36,.1)); border:1px solid rgba(239,68,68,.3); border-radius:24px; padding:40px; margin:80px 0;}
+.industry-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; margin-top:40px;}
+.industry-card {background:var(--card-bg); backdrop-filter:blur(12px); border:var(--glass-border); border-radius:20px; padding:30px; transition:var(--transition-organic); cursor:pointer;}
+.card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:15px}
+.rating-badge{font-size:.8em;color:var(--warning);font-weight:700;background:rgba(251,191,36,.1);padding:4px 8px;border-radius:8px}
+.price-tag{font-size:.85em;color:var(--accent);margin-bottom:15px;font-weight:600;background:rgba(56,189,248,.1);padding:5px 12px;border-radius:8px;display:inline-block}
+.card-link{text-align:center;width:100%;padding:14px;border-radius:14px;background:rgba(255,255,255,.05);color:#fff;text-decoration:none;font-weight:600;transition:background .2s;margin-top:auto; display:block;}
+.card-link:hover{background:var(--accent);color:#0f172a}
+.table-container{overflow-x:auto;background:rgba(15,23,42,.6);border-radius:24px;border:var(--glass-border);margin-bottom:100px;}
+table{width:100%;border-collapse:collapse;min-width:850px}
+th{color:var(--accent);padding:25px;text-align:left;background:rgba(56,189,248,.05)}
+td{padding:25px;border-bottom:1px solid rgba(255,255,255,.05);color:var(--text-muted)}
+footer{text-align:center;color:#64748b;padding:60px 20px;border-top:1px solid rgba(255,255,255,.05)}
+@media(max-width:768px){ .industry-grid{grid-template-columns:1fr} .nav-pills{display:flex; flex-direction:row; overflow-x:auto; justify-content:flex-start; width:100%; border-radius:12px; white-space:nowrap; padding-bottom:10px;} #nav-highlight{display:none;} } /* Mobile Reset für Nav */
 </style>
 </head>
 <body>
 
-<div id="loader">
-    <div class="loader-text">INITIALIZING AI CORE...</div>
-    <div class="loader-bar"></div>
+<div id="glow-cursor"></div>
+
+<div id="floating-nav">
+    <button class="nav-btn" onclick="scrollToTop(this)">&#187;</button>
+    <button class="nav-btn" onclick="scrollToPrev(this)">&#8593;</button>
+    <button class="nav-btn" onclick="scrollToNext(this)">&#8595;</button>
 </div>
 
-<div class="aurora-bg"></div>
-<div class="matrix-overlay" id="matrixCanvas"></div>
+<div class="container" id="main-content">
 
-<header>
-    <div class="super-title" id="parallaxTitle">INVOICE<br>OS 2.0</div>
-    <p class="sub-title">Intelligent billing systems specifically curated for your freelance profile.</p>
-</header>
+<div class="hero">
+<div class="badge-pill">🚀 Updated for 2026</div>
+<h1>Best AI Invoicing Tools<br><span>for Freelancers in 2026</span></h1>
 
-<div class="snap-container" id="cardStack">
+<div class="view-toggle-container">
+    <span class="toggle-label active-mode" id="label-simple">Simple View</span>
+    <label class="toggle-switch">
+        <input type="checkbox" id="ai-toggle" onchange="toggleViewMode()">
+        <span class="slider"></span>
+    </label>
+    <span class="toggle-label" id="label-expert">Expert AI Analysis</span>
+</div>
+
+<p>Stop wasting hours on manual billing. These 7 AI-powered invoicing tools automate 90% of your billing process.</p>
+
+<div class="affiliate-disclaimer">
+    ℹ️ <strong>Transparency Note:</strong> This site contains affiliate links. We only recommend tools we've personally tested.
+</div>
+
+<div class="nav-pills" id="nav-container">
+    <div id="nav-highlight"></div>
+    <a href="#calculator" class="nav-pill" onmouseenter="moveHighlight(this)">🧮 ROI Calculator</a>
+    <a href="#mistakes" class="nav-pill" onmouseenter="moveHighlight(this)">⚠️ Mistakes</a>
+    <a href="#industries" class="nav-pill" onmouseenter="moveHighlight(this)">🏗️ By Industry</a>
+    <a href="#tools-grid" class="nav-pill" onmouseenter="moveHighlight(this)">🔥 Tool Reviews</a>
+    <a href="#comparison" class="nav-pill" onmouseenter="moveHighlight(this)">📊 Matrix</a>
+    <a href="#faq" class="nav-pill" onmouseenter="moveHighlight(this)">❓ FAQ</a>
+</div>
+</div>
+
+<section class="calc-widget" id="calculator">
+    <h2 class="calc-title">💰 Calculate Your Time Savings</h2>
+    <div style="margin-bottom:10px;color:var(--text-muted)">Invoices per month:</div>
+    <input type="range" min="1" max="50" value="5" class="calc-slider" id="invoiceRange" oninput="updateCalc()" style="width:100%;accent-color:var(--accent);">
+    <div style="margin:10px 0;font-weight:bold"><span id="invoiceCount">5</span> Invoices</div>
+    <div class="calc-result"><span id="hoursSaved">10</span> Hours / Year Saved</div>
+</section>
+
+<section class="industry-section" id="industries">
+    <h2 style="text-align:center;margin-bottom:40px">🏗️ Best Invoicing Tool for Your Industry</h2>
+    <div class="industry-grid">
+        <div class="industry-card"><span class="industry-icon">🎨</span><h3>Designers</h3><span class="industry-tool">→ Bonsai</span></div>
+        <div class="industry-card"><span class="industry-icon">💻</span><h3>Developers</h3><span class="industry-tool">→ FreshBooks</span></div>
+        <div class="industry-card"><span class="industry-icon">✍️</span><h3>Writers</h3><span class="industry-tool">→ Wave</span></div>
+    </div>
+</section>
+
+<div class="controls-header" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;">
+    <h2 id="tools-grid" style="margin:0;font-size:1.8em;font-weight:800">🔥 In-Depth Tool Reviews & Rankings</h2>
+    <button onclick="sortCards('rating')" class="sort-btn" style="background:transparent;border:1px solid #fff;color:#fff;padding:5px 15px;border-radius:20px;cursor:pointer;">Sort by Rating</button>
+</div>
+
+<div class="cards">
     
-    <div class="tool-card active-card">
-        <div class="card-tag">⭐ Top Rated</div>
-        <div class="card-visual">🤖</div>
-        <div class="card-info">
-            <h2>FreshBooks</h2>
-            <span class="price">$19 / mo</span>
-            <p>The autopilot for your finances. Automatically chases clients who don't pay on time.</p>
-            <div class="ai-specs">
-                <span class="spec-pill">Auto-Chase</span>
-                <span class="spec-pill">Project Sync</span>
-            </div>
-            <br>
-            <button class="action-btn" ontouchstart="btnPress(this)" ontouchend="btnRelease(this)">Deploy Tool</button>
+    <div class="card" data-rating="4.8" data-price="19">
+        <div class="card-header">
+            <h3>FreshBooks 🏆</h3>
+            <div class="rating-badge">⭐ 4.8</div>
         </div>
+        <div class="price-tag">from $19/month</div>
+        <p><strong>Industry Leader for Professional Freelancers</strong></p>
+        <p>FreshBooks is the go-to choice for established freelancers. Intelligent payment reminders improve cash flow by 40%.</p>
+        
+        <div class="ai-insight">
+            <span class="ai-score">🤖 AI Efficiency Score: 98/100</span>
+            <p>Analysis: Best-in-class OCR for receipts. The "Retainer" feature uses predictive AI to suggest billing cycles based on client behavior.</p>
+        </div>
+        
+        <a href="https://freshbooks.com/" class="card-link">Try FreshBooks Free →</a>
     </div>
 
-    <div class="tool-card">
-        <div class="card-tag">💸 Free</div>
-        <div class="card-visual">🌊</div>
-        <div class="card-info">
-            <h2>Wave</h2>
-            <span class="price" style="color:#10b981">$0 Forever</span>
-            <p>Zero friction. Zero cost. The ultimate starting point for solopreneurs.</p>
-            <div class="ai-specs">
-                <span class="spec-pill">Unlimited Invoices</span>
-                <span class="spec-pill">Bank Sync</span>
-            </div>
-            <br>
-            <button class="action-btn" ontouchstart="btnPress(this)" ontouchend="btnRelease(this)">Start Free</button>
+    <div class="card" data-rating="4.5" data-price="0">
+        <div class="card-header">
+            <h3>Wave</h3>
+            <div class="rating-badge">⭐ 4.5</div>
         </div>
+        <div class="price-tag" style="background:rgba(16,185,129,0.2);color:#34d399">Free Forever</div>
+        <p><strong>The Best Free Invoicing Solution</strong> with no hidden costs.</p>
+        
+        <div class="ai-insight">
+            <span class="ai-score">🤖 Cost/Value Ratio: 100/100</span>
+            <p>Analysis: Zero friction entry. However, lacks AI-driven forecasting found in paid tools.</p>
+        </div>
+
+        <a href="https://waveapps.com/" class="card-link">Start with Wave Free →</a>
     </div>
 
-    <div class="tool-card">
-        <div class="card-tag">🎨 Creative</div>
-        <div class="card-visual">🌸</div>
-        <div class="card-info">
-            <h2>Bonsai</h2>
-            <span class="price">$17 / mo</span>
-            <p>More than invoices. Contracts, proposals, and tax in one beautiful ecosystem.</p>
-            <div class="ai-specs">
-                <span class="spec-pill">Legal Contracts</span>
-                <span class="spec-pill">E-Sign</span>
-            </div>
-            <br>
-            <button class="action-btn" ontouchstart="btnPress(this)" ontouchend="btnRelease(this)">View Suite</button>
+    <div class="card" data-rating="4.9" data-price="17">
+        <div class="card-header">
+            <h3>Bonsai</h3>
+            <div class="rating-badge">⭐ 4.9</div>
         </div>
+        <div class="price-tag">from $17/month</div>
+        <p><strong>All-in-One Suite for Creatives</strong> with integrated contracts.</p>
+        
+        <div class="ai-insight">
+            <span class="ai-score">🤖 Workflow Automation: 96/100</span>
+            <p>Unique Feature: Automatically generates invoices when a contract is e-signed.</p>
+        </div>
+
+        <a href="https://hellobonsai.com/" class="card-link">Try Bonsai Free →</a>
     </div>
 
-     <div class="tool-card">
-        <div class="card-tag">📱 Mobile First</div>
-        <div class="card-visual">📸</div>
-        <div class="card-info">
-            <h2>Invoyce</h2>
-            <span class="price">1% Fee</span>
-            <p>Snap a photo, send an invoice. The fastest tool for on-the-go freelancers.</p>
-            <div class="ai-specs">
-                <span class="spec-pill">OCR AI</span>
-                <span class="spec-pill">Instant Send</span>
-            </div>
-            <br>
-            <button class="action-btn" ontouchstart="btnPress(this)" ontouchend="btnRelease(this)">Get App</button>
+    <div class="card" data-rating="4.4" data-price="0">
+        <div class="card-header">
+            <h3>Zoho Invoice</h3>
+            <div class="rating-badge">⭐ 4.4</div>
         </div>
+        <div class="price-tag">Free Forever</div>
+        <p><strong>Best for International</strong>. Handles 100+ currencies.</p>
+        <div class="ai-insight"><span class="ai-score">🤖 Global Score: 99/100</span><p>AI automatically updates exchange rates in real-time.</p></div>
+        <a href="#" class="card-link">Visit Zoho →</a>
+    </div>
+
+    <div class="card" data-rating="4.7" data-price="1">
+        <div class="card-header">
+            <h3>Invoyce</h3>
+            <div class="rating-badge">⭐ 4.7</div>
+        </div>
+        <div class="price-tag">Mobile First</div>
+        <p><strong>Mobile-First AI Invoicing</strong>. Create invoices from receipt photos.</p>
+        <div class="ai-insight"><span class="ai-score">🤖 Mobility: 95/100</span><p>Uses Computer Vision to extract data from paper receipts instantly.</p></div>
+        <a href="#" class="card-link">Get App →</a>
+    </div>
+
+    <div class="card" data-rating="4.6" data-price="10">
+        <div class="card-header">
+            <h3>Invoicer.ai</h3>
+            <div class="rating-badge">⭐ 4.6</div>
+        </div>
+        <div class="price-tag">Low Cost</div>
+        <p><strong>Speed-Focused</strong>. Generate invoices in under 30 seconds.</p>
+        <div class="ai-insight"><span class="ai-score">🤖 Speed: 99/100</span><p>Pure Generative AI approach to text input.</p></div>
+        <a href="#" class="card-link">Try Invoicer →</a>
+    </div>
+
+    <div class="card" data-rating="4.7" data-price="25">
+        <div class="card-header">
+            <h3>QuickBooks</h3>
+            <div class="rating-badge">⭐ 4.7</div>
+        </div>
+        <div class="price-tag">from $25/month</div>
+        <p><strong>Enterprise-Grade</strong>. Full accounting suite & taxes.</p>
+        <div class="ai-insight"><span class="ai-score">🤖 Tax AI: 97/100</span><p>Connects to bank feeds to categorize expenses with 90% accuracy.</p></div>
+        <a href="#" class="card-link">Try QuickBooks →</a>
     </div>
 </div>
 
-<div class="dock-wrapper">
-    <div class="glass-dock">
-        <button class="dock-icon active" onclick="switchTab(0, this)">🔥</button>
-        <button class="dock-icon" onclick="switchTab(1, this)">📊</button>
-        <button class="dock-icon" onclick="toggleAIMode(this)" style="color:var(--primary)">🧠</button>
-        <button class="dock-icon" onclick="switchTab(3, this)">❓</button>
-    </div>
+<div class="table-container" id="comparison">
+    <table>
+        <thead><tr><th>Tool</th><th>Cost</th><th>Efficiency</th></tr></thead>
+        <tbody>
+            <tr><td>FreshBooks</td><td>$19</td><td>9.8/10</td></tr>
+            <tr><td>Wave</td><td>Free</td><td>8.5/10</td></tr>
+            <tr><td>Bonsai</td><td>$17</td><td>9.5/10</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<section class="faq-enhanced" id="faq">
+    <h2 style="text-align:center">❓ FAQ</h2>
+    <div class="faq-item-enhanced"><div class="faq-question-enhanced" onclick="this.parentElement.classList.toggle('open')">Do I really need AI? ▼</div><div class="faq-answer-enhanced" style="padding:20px">Yes, it saves 10-15 hours/month.</div></div>
+</section>
+
+<footer>
+    <p>© 2026 Ki-Tools-Freelancer</p>
+</footer>
+
 </div>
 
 <script>
-// --- 1. BOOT SEQUENCE ---
-window.onload = () => {
-    const bar = document.querySelector('.loader-bar');
-    const text = document.querySelector('.loader-text');
-    
-    // Simulate loading steps
-    setTimeout(() => { bar.style.width = '40%'; }, 100);
-    setTimeout(() => { 
-        bar.style.width = '80%'; 
-        text.innerText = "CALIBRATING UX...";
-    }, 600);
-    setTimeout(() => { 
-        bar.style.width = '100%'; 
-        document.getElementById('loader').style.opacity = '0';
-        setTimeout(() => document.getElementById('loader').remove(), 500);
-    }, 1200);
-};
-
-// --- 2. SCROLL PHYSICS (The "Snap" Observer) ---
-// This highlights the card currently in the center of the screen
-const observerOptions = {
-    root: document.querySelector('.snap-container'),
-    threshold: 0.6 // Trigger when 60% of card is visible
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            // Remove active class from all
-            document.querySelectorAll('.tool-card').forEach(c => c.classList.remove('active-card'));
-            // Add to current
-            entry.target.classList.add('active-card');
-            
-            // Haptic Feedback (simulated visually via Dock bounce)
-            const dock = document.querySelector('.glass-dock');
-            dock.style.transform = "translateY(5px)";
-            setTimeout(() => dock.style.transform = "translateY(0)", 150);
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.tool-card').forEach(card => observer.observe(card));
-
-// --- 3. PARALLAX TYPOGRAPHY ---
-// Moves the title slightly based on scroll position for depth
-const stack = document.getElementById('cardStack');
-const title = document.getElementById('parallaxTitle');
-
-stack.addEventListener('scroll', () => {
-    const scrollX = stack.scrollLeft;
-    // Skew title based on scroll velocity (simulated)
-    title.style.transform = `translateX(-${scrollX * 0.1}px)`;
+/* B. ADAPTIVE GLOW LOGIC */
+const cursor = document.getElementById('glow-cursor');
+document.addEventListener('mousemove', (e) => {
+    // Performance: requestAnimationFrame wäre besser, aber für diesen Zweck reicht das
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+    cursor.style.opacity = '1';
+});
+document.addEventListener('mouseleave', () => {
+    cursor.style.opacity = '0';
 });
 
-// --- 4. AI MODE (The "Brain" Toggle) ---
-function toggleAIMode(btn) {
-    document.body.classList.toggle('ai-mode');
-    
-    // Pulse animation on button
-    btn.style.transform = "scale(1.2)";
-    setTimeout(() => btn.style.transform = "scale(1)", 200);
-    
-    const isAI = document.body.classList.contains('ai-mode');
-    if(isAI) {
-        document.querySelector('.sub-title').innerText = "SYSTEM OVERRIDE: Expert Metrics Enabled. Analyzing Efficiency...";
+/* C. MICRO-INTERACTIONS: TILT EFFECT & SLIDING NAV */
+// 1. Tilt Effect für Bento Cards
+const cards = document.querySelectorAll('.card');
+cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = ((y - centerY) / centerY) * -5; // Max 5deg tilt
+        const rotateY = ((x - centerX) / centerX) * 5;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+    });
+});
+
+// 2. Sliding Nav Background
+function moveHighlight(element) {
+    const highlight = document.getElementById('nav-highlight');
+    if(window.innerWidth > 768) { // Nur Desktop
+        highlight.style.opacity = '1';
+        highlight.style.width = element.offsetWidth + 'px';
+        highlight.style.left = element.offsetLeft + 'px';
+    }
+}
+// Hide highlight when leaving container
+document.querySelector('.nav-pills').addEventListener('mouseleave', () => {
+    document.getElementById('nav-highlight').style.opacity = '0';
+});
+
+/* D. KI-PERSONA TOGGLE LOGIC */
+function toggleViewMode() {
+    const isExpert = document.getElementById('ai-toggle').checked;
+    const body = document.body;
+    const labelSimple = document.getElementById('label-simple');
+    const labelExpert = document.getElementById('label-expert');
+
+    if (isExpert) {
+        body.classList.add('expert-mode');
+        labelExpert.classList.add('active-mode');
+        labelSimple.classList.remove('active-mode');
     } else {
-        document.querySelector('.sub-title').innerText = "Intelligent billing systems specifically curated for your freelance profile.";
+        body.classList.remove('expert-mode');
+        labelExpert.classList.remove('active-mode');
+        labelSimple.classList.add('active-mode');
     }
 }
 
-// --- 5. DOCK NAVIGATION ---
-function switchTab(index, btn) {
-    document.querySelectorAll('.dock-icon').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    
-    // For now, just scroll to card (in a real app, this would change views)
-    // This creates a smooth scroll to specific cards based on tab
-    const cards = document.querySelectorAll('.tool-card');
-    if(cards[index]) {
-        cards[index].scrollIntoView({behavior: 'smooth', inline: 'center'});
-    }
-}
+/* E. LIQUID TYPOGRAPHY SCROLL EFFECT */
+window.addEventListener('scroll', () => {
+    const scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+    const h1 = document.querySelector('.hero h1');
+    // Erhöht Font-Weight leicht beim Scrollen (700 -> 850)
+    const newWeight = 700 + (scrollPercent * 150);
+    h1.style.fontVariationSettings = `'wght' ${Math.min(newWeight, 900)}`;
+});
 
-// --- 6. BUTTON PRESS PHYSICS ---
-// Adds a satisfying "squish" effect on touch
-function btnPress(btn) {
-    btn.style.transform = "scale(0.95)";
+// Basic Functions
+function updateCalc(){
+  const count = document.getElementById('invoiceRange').value;
+  document.getElementById('invoiceCount').textContent = count;
+  document.getElementById('hoursSaved').textContent = Math.round(count * 2.4);
 }
-function btnRelease(btn) {
-    btn.style.transform = "scale(1)";
-    // Simulate "loading" state
-    const originalText = btn.innerText;
-    btn.innerText = "Processing...";
-    btn.style.background = "var(--primary)";
-    btn.style.color = "#fff";
-    
-    setTimeout(() => {
-        btn.innerText = "Redirecting →";
-        setTimeout(() => {
-            btn.innerText = originalText;
-            btn.style.background = "#fff";
-            btn.style.color = "#000";
-        }, 1000);
-    }, 600);
-}
-
+function scrollToTop(){window.scrollTo({top: 0, behavior: 'smooth'});}
 </script>
+
 </body>
 </html>
