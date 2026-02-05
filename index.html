@@ -57,16 +57,16 @@
   --text:#1e293b; /* Dunkler Text für bessere Lesbarkeit */
   --text-dark:#0f172a; /* Noch dunkler für Überschriften */
   --text-muted:#475569;
-  --card-bg:rgba(255, 255, 255, 0.95); /* Hellerer Hintergrund für Karten */
-  --card-border:rgba(203, 213, 225, 0.5);
+  --card-bg:rgba(255, 255, 255, 1); /* Weniger transparent */
+  --card-border:rgba(203, 213, 225, 0.6);
   --glass:rgba(255,255,255,0.1);
-  --shadow:0 8px 20px rgba(0,0,0,0.1);
+  --shadow:0 8px 20px rgba(0,0,0,0.12);
   --radius:12px;
   --transition:all 0.25s ease
 }
 body{
   font-family:'Inter',sans-serif;
-  background:linear-gradient(135deg,#f8fafc 0%,#e2e8f0 100%);
+  background:linear-gradient(135deg,#f1f5f9 0%,#e2e8f0 100%);
   color:var(--text);
   min-height:100vh;
   overflow-x:hidden;
@@ -95,6 +95,10 @@ body{
 .quick-navigation{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;max-width:1200px;margin:0 auto 30px;padding:0 20px}
 .quick-card{background:white;border-radius:var(--radius);padding:20px;transition:var(--transition);border:2px solid var(--card-border);display:flex;flex-direction:column;align-items:center;text-align:center;cursor:pointer;box-shadow:var(--shadow)}
 .quick-card:hover{transform:translateY(-5px);border-color:var(--primary);box-shadow:0 12px 25px rgba(59,130,246,0.15)}
+.quick-card.active{background:linear-gradient(135deg, var(--primary-light), var(--primary));border-color:var(--primary);color:white;}
+.quick-card.active .quick-title,
+.quick-card.active .quick-desc{color:white;}
+.quick-card.active .quick-icon{background:rgba(255,255,255,0.2);color:white;}
 .quick-icon{width:48px;height:48px;background:linear-gradient(135deg,var(--primary),var(--accent));border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:15px;font-size:1.4rem;color:white}
 .quick-title{font-size:1rem;font-weight:700;color:var(--text-dark);margin-bottom:6px}
 .quick-desc{font-size:0.85rem;color:var(--text-muted);line-height:1.4}
@@ -113,7 +117,11 @@ body{
 .chart-tool-name{font-weight:800;font-size:1.1rem;color:var(--text-dark);margin-bottom:6px}
 .chart-category{font-size:0.8rem;color:var(--primary);font-weight:600;background:rgba(59,130,246,0.1);padding:4px 10px;border-radius:20px;display:inline-block}
 .chart-price{font-size:1rem;color:var(--secondary);font-weight:700;margin:10px 0}
-.chart-description{font-size:0.9rem;color:var(--text-muted);line-height:1.5;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.chart-description{font-size:0.9rem;color:var(--text-muted);line-height:1.5;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.chart-pros-cons{margin:12px 0;font-size:0.85rem;}
+.pros-list, .cons-list{margin:6px 0;}
+.pros-list li:before{content:"✓ ";color:var(--secondary);font-weight:bold;}
+.cons-list li:before{content:"✗ ";color:#ef4444;font-weight:bold;}
 .chart-actions{display:flex;gap:10px}
 .vote-btn{flex:1;background:rgba(255,255,255,0.05);border:2px solid var(--card-border);border-radius:8px;padding:12px;cursor:pointer;transition:var(--transition);display:flex;align-items:center;justify-content:center;gap:8px;font-size:1rem;font-weight:600;color:var(--text)}
 .vote-btn i{font-size:1.2rem} /* Größere Icons */
@@ -147,6 +155,10 @@ body{
 .tool-name-compact{font-weight:800;font-size:1.1rem;color:var(--text-dark);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tool-category-compact{font-size:0.75rem;color:var(--primary);font-weight:600;padding:4px 10px;background:rgba(59,130,246,0.1);border-radius:20px;white-space:nowrap}
 .tool-desc-compact{font-size:0.9rem;color:var(--text-muted);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tool-pros-cons-compact{font-size:0.85rem;color:var(--text-muted);margin-top:8px;line-height:1.4;}
+.tool-pros-cons-compact span{font-weight:600;color:var(--primary);}
+.tool-pros-cons-compact .pros{color:var(--secondary);}
+.tool-pros-cons-compact .cons{color:#ef4444;}
 .tool-meta-compact{display:flex;flex-direction:column;align-items:flex-end;gap:10px;min-width:160px}
 .tool-price-compact{font-size:1rem;font-weight:800;color:var(--secondary)}
 .tool-link-compact{background:linear-gradient(135deg,var(--primary),var(--accent));color:white;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:700;transition:var(--transition);font-size:0.9rem;white-space:nowrap;text-align:center;box-shadow:0 4px 10px rgba(59,130,246,0.2)}
@@ -179,7 +191,7 @@ body{
 <i class="fas fa-arrow-up"></i>
 </div>
 <header class="header">
-<div class="badge" id="badgeText">🚀 12 Rechnungs-Tools für 2026</div>
+<div class="badge" id="badgeText">🚀 16 Rechnungs-Tools für 2026</div>
 <h1 id="pageTitle">Finde sofort dein perfektes Rechnungs-Tool</h1>
 <p id="pageDescription">Echte Freelancer-Bewertungen, Top 5 Charts, intelligente Empfehlungen. Kein unnötiges Scrollen.</p>
 <div class="search-container">
@@ -252,7 +264,7 @@ body{
 <p><a href="#"><i class="fas fa-question-circle"></i> Hilfe</a> | <a href="#"><i class="fas fa-envelope"></i> Feedback</a></p>
 </footer>
 <script>
-// Rechnungs-Tools Datenbank mit Preisen in beiden Sprachen
+// Erweiterte Rechnungs-Tools Datenbank mit detaillierten Beschreibungen
 let invoiceTools = [
 {
   id:1,
@@ -262,10 +274,13 @@ let invoiceTools = [
   priceDisplay:{de:"ab 19€/Monat", en:"from $19/month"},
   rating:4.8,
   description:{de:"Führende Lösung für professionelle Freelancer mit Automatisierung.", en:"Leading solution for professional freelancers with automation."},
+  detailedDescription:{de:"FreshBooks ist eine cloud-basierte Rechnungssoftware speziell für Freelancer und kleine Unternehmen. Sie bietet umfangreiche Automatisierungsfunktionen, professionelle Rechnungsvorlagen und eine intuitive Benutzeroberfläche.", en:"FreshBooks is a cloud-based invoicing software specifically for freelancers and small businesses. It offers extensive automation features, professional invoice templates, and an intuitive user interface."},
   features:["Auto-Erinnerungen","Zeiterfassung","Kundenportal"],
+  pros:{de:["Sehr benutzerfreundlich", "Exzellente Automatisierung", "Gute Mobile Apps"], en:["Very user-friendly", "Excellent automation", "Good mobile apps"]},
+  cons:{de:["Teurer als Alternativen", "Begrenzte Buchhaltungsfunktionen"], en:["More expensive than alternatives", "Limited accounting features"]},
   link:"https://freshbooks.com/",
   badge:"popular",
-  useCases:["automation","time-tracking"],
+  useCases:["automation","time-tracking","international"],
   votes:0,
   userVote:0
 },
@@ -277,10 +292,13 @@ let invoiceTools = [
   priceDisplay:{de:"Kostenlos", en:"Free forever"},
   rating:4.5,
   description:{de:"100% kostenlose Rechnungen mit integrierter Buchhaltung.", en:"100% free invoices with integrated accounting."},
+  detailedDescription:{de:"Wave ist eine komplett kostenlose Rechnungssoftware mit integrierten Buchhaltungsfunktionen. Perfekt für Startups und Freelancer mit kleinem Budget.", en:"Wave is a completely free invoicing software with integrated accounting features. Perfect for startups and freelancers on a tight budget."},
   features:["Unbegrenzt","Buchhaltung","Bankverbindung"],
+  pros:{de:["Komplett kostenlos", "Integrierte Buchhaltung", "Gute Grundfunktionen"], en:["Completely free", "Integrated accounting", "Good basic features"]},
+  cons:{de:["Weniger Automatisierung", "Customer Support nur per Email"], en:["Less automation", "Customer support only via email"]},
   link:"https://waveapps.com/",
   badge:"popular",
-  useCases:["basic"],
+  useCases:["basic","free"],
   votes:0,
   userVote:0
 },
@@ -292,10 +310,13 @@ let invoiceTools = [
   priceDisplay:{de:"ab 17€/Monat", en:"from $17/month"},
   rating:4.9,
   description:{de:"All-in-One Suite mit Verträgen, Angeboten & Rechnungen.", en:"All-in-One suite with contracts, proposals & invoices."},
+  detailedDescription:{de:"Bonsai kombiniert Rechnungen, Verträge, Angebote und Zeiterfassung in einer Plattform. Speziell für Freelancer entwickelt, die alle Geschäftsprozesse verwalten müssen.", en:"Bonsai combines invoices, contracts, proposals and time tracking in one platform. Specifically developed for freelancers who need to manage all business processes."},
   features:["Verträge","Angebote","Steuern"],
+  pros:{de:["Alles-in-einem Tool", "Automatische Zahlungserinnerungen", "Professionelle Vertragsvorlagen"], en:["All-in-one tool", "Automatic payment reminders", "Professional contract templates"]},
+  cons:{de:["Etwas teurer", "Steuerfunktionen nur für USA/Kanada"], en:["Slightly more expensive", "Tax features only for USA/Canada"]},
   link:"https://hellobonsai.com/",
   badge:"popular",
-  useCases:["contracts","automation"],
+  useCases:["contracts","automation","time-tracking"],
   votes:0,
   userVote:0
 },
@@ -307,10 +328,13 @@ let invoiceTools = [
   priceDisplay:{de:"Kostenlos/Bezahlt", en:"Free/Paid"},
   rating:4.4,
   description:{de:"Beste internationale Lösung mit 100+ Währungen.", en:"Best international solution with 100+ currencies."},
+  detailedDescription:{de:"Zoho Invoice ist Teil der Zoho Suite und bietet exzellente internationale Funktionen. Unterstützt über 100 Währungen und ist in mehreren Sprachen verfügbar.", en:"Zoho Invoice is part of the Zoho Suite and offers excellent international features. Supports over 100 currencies and is available in multiple languages."},
   features:["100+ Währungen","Mehrsprachig","Steuer-Konform"],
+  pros:{de:["Exzellente internationale Unterstützung", "Gute Integration in Zoho-Ökosystem", "Flexible Preismodelle"], en:["Excellent international support", "Good integration with Zoho ecosystem", "Flexible pricing models"]},
+  cons:{de:["Komplexere Einrichtung", "Mobil-Apps weniger intuitiv"], en:["More complex setup", "Mobile apps less intuitive"]},
   link:"https://go.zoho.com/IB42",
   badge:"new",
-  useCases:["international"],
+  useCases:["international","automation"],
   votes:0,
   userVote:0
 },
@@ -322,10 +346,13 @@ let invoiceTools = [
   priceDisplay:{de:"~1% Transaktionsgebühr", en:"~1% transaction fee"},
   rating:4.7,
   description:{de:"Mobile-First KI Rechnungen mit Beleg-Scanning.", en:"Mobile-first AI invoices with receipt scanning."},
+  detailedDescription:{de:"Invoyce ist eine mobile-first Rechnungssoftware mit KI-Funktionen. Scan Belege und erstelle automatisch Rechnungen. Ideal für unterwegs arbeitende Freelancer.", en:"Invoyce is a mobile-first invoicing software with AI features. Scan receipts and create invoices automatically. Ideal for freelancers working on the go."},
   features:["KI","Mobile","Offline"],
+  pros:{de:["Beste Mobile Experience", "KI-gestützte Belegverarbeitung", "Schnelle Rechnungserstellung"], en:["Best mobile experience", "AI-powered receipt processing", "Fast invoice creation"]},
+  cons:{de:["Web-Version weniger umfangreich", "Transaktionsgebühren für Zahlungen"], en:["Web version less comprehensive", "Transaction fees for payments"]},
   link:"https://invoyce.ai/",
   badge:"new",
-  useCases:["mobile"],
+  useCases:["mobile","automation"],
   votes:0,
   userVote:0
 },
@@ -337,10 +364,13 @@ let invoiceTools = [
   priceDisplay:{de:"ab 25€/Monat", en:"from $25/month"},
   rating:4.7,
   description:{de:"Komplette Buchhaltung für wachsende Unternehmen.", en:"Complete accounting for growing businesses."},
+  detailedDescription:{de:"QuickBooks ist eine umfassende Buchhaltungssoftware mit integrierten Rechnungsfunktionen. Ideal für Unternehmen, die Rechnungswesen und Buchhaltung kombinieren müssen.", en:"QuickBooks is a comprehensive accounting software with integrated invoicing features. Ideal for businesses that need to combine invoicing and accounting."},
   features:["Buchhaltung","Steuern","Payroll"],
+  pros:{de:["Sehr umfangreiche Buchhaltungsfunktionen", "Gute Steuer-Tools", "Skaliert mit Unternehmenswachstum"], en:["Very comprehensive accounting functions", "Good tax tools", "Scales with business growth"]},
+  cons:{de:["Überwältigend für reine Rechnungsstellung", "Teuer für kleine Freelancer"], en:["Overwhelming for pure invoicing", "Expensive for small freelancers"]},
   link:"https://quickbooks.intuit.com/",
   badge:"popular",
-  useCases:["advanced"],
+  useCases:["advanced","international"],
   votes:0,
   userVote:0
 },
@@ -352,10 +382,13 @@ let invoiceTools = [
   priceDisplay:{de:"ab 9€/Monat", en:"from $9/month"},
   rating:4.6,
   description:{de:"Schnelle KI-Rechnungen in unter 30 Sekunden.", en:"Fast AI invoices in under 30 seconds."},
+  detailedDescription:{de:"Invoicer.ai verwendet KI, um Rechnungen in Sekundenschnelle zu erstellen. Einfache Benutzeroberfläche und schnelle Erstellung von wiederkehrenden Rechnungen.", en:"Invoicer.ai uses AI to create invoices in seconds. Simple user interface and quick creation of recurring invoices."},
   features:["Schnell","KI Autocomplete","Batch"],
+  pros:{de:["Extrem schnelle Rechnungserstellung", "KI-Vorschläge sparen Zeit", "Einfache Bedienung"], en:["Extremely fast invoice creation", "AI suggestions save time", "Easy to use"]},
+  cons:{de:["Begrenzte Anpassungsmöglichkeiten", "Keine integrierte Zeiterfassung"], en:["Limited customization options", "No integrated time tracking"]},
   link:"https://invoicer.ai/",
   badge:"new",
-  useCases:["automation"],
+  useCases:["automation","basic"],
   votes:0,
   userVote:0
 },
@@ -367,10 +400,13 @@ let invoiceTools = [
   priceDisplay:{de:"Kostenlos/ab 9€", en:"Free/from $9"},
   rating:4.3,
   description:{de:"Rechnungen & Angebote mit Online-Zahlungen.", en:"Invoices & quotes with online payments."},
+  detailedDescription:{de:"Billdu bietet Rechnungen, Angebote und Online-Zahlungen in einer App. Gute Mobile-Apps und Offline-Funktionalität.", en:"Billdu offers invoices, quotes and online payments in one app. Good mobile apps and offline functionality."},
   features:["Angebote","Zahlungen","Mobile"],
+  pros:{de:["Integrierte Online-Zahlungen", "Gute Offline-Funktionalität", "Angebotsfunktion inklusive"], en:["Integrated online payments", "Good offline functionality", "Quote feature included"]},
+  cons:{de:["Design etwas veraltet", "Begrenzte Automatisierung"], en:["Design somewhat outdated", "Limited automation"]},
   link:"https://www.billdu.com/",
   badge:"free",
-  useCases:["mobile"],
+  useCases:["mobile","basic"],
   votes:0,
   userVote:0
 },
@@ -382,7 +418,10 @@ let invoiceTools = [
   priceDisplay:{de:"Einmalzahlung 99€", en:"One-time $99"},
   rating:4.4,
   description:{de:"Self-hosted Lösung für volle Kontrolle.", en:"Self-hosted solution for full control."},
+  detailedDescription:{de:"Pancake ist eine Self-Hosted Rechnungssoftware, die du auf deinem eigenen Server installierst. Einmalige Zahlung, lebenslange Updates. Volle Kontrolle über deine Daten.", en:"Pancake is a self-hosted invoicing software that you install on your own server. One-time payment, lifetime updates. Full control over your data."},
   features:["Self-hosted","Lifetime","Kontrolle"],
+  pros:{de:["Einmalige Zahlung, keine monatlichen Kosten", "Volle Datenkontrolle", "Anpassbar an eigene Bedürfnisse"], en:["One-time payment, no monthly costs", "Full data control", "Customizable to own needs"]},
+  cons:{de:["Selbst gehostet = eigene Wartung nötig", "Kein automatisches Backup", "Keine Mobile Apps"], en:["Self-hosted = own maintenance required", "No automatic backup", "No mobile apps"]},
   link:"https://pancakeapp.com/",
   badge:"free",
   useCases:["basic"],
@@ -397,10 +436,13 @@ let invoiceTools = [
   priceDisplay:{de:"ab 12€/Monat", en:"from $12/month"},
   rating:4.5,
   description:{de:"Zeiterfassung & Rechnungen kombiniert.", en:"Time tracking & invoices combined."},
+  detailedDescription:{de:"Harvest kombiniert Zeiterfassung und Rechnungsstellung nahtlos. Ideal für Freelancer, die nach Stunden abrechnen und Zeit direkt in Rechnungen umwandeln möchten.", en:"Harvest seamlessly combines time tracking and invoicing. Ideal for freelancers who bill by the hour and want to convert time directly into invoices."},
   features:["Zeiterfassung","Projekte","Berichte"],
+  pros:{de:["Perfekte Zeit-Rechnung-Integration", "Exzellente Berichte", "Einfache Bedienung"], en:["Perfect time-invoice integration", "Excellent reports", "Easy to use"]},
+  cons:{de:["Teurer für Teams", "Begrenzte Rechnungsvorlagen"], en:["More expensive for teams", "Limited invoice templates"]},
   link:"https://www.getharvest.com/",
   badge:"popular",
-  useCases:["time-tracking"],
+  useCases:["time-tracking","automation"],
   votes:0,
   userVote:0
 },
@@ -412,7 +454,10 @@ let invoiceTools = [
   priceDisplay:{de:"Kostenlos/ab 9€", en:"Free/from $9"},
   rating:4.2,
   description:{de:"Einfache Lösung für deutsche Freelancer.", en:"Simple solution for German freelancers."},
+  detailedDescription:{de:"Debitoor ist eine einfache Rechnungssoftware speziell für den deutschen Markt. Enthält deutsche Steuerformulare und ist auf Kleinunternehmer ausgelegt.", en:"Debitoor is a simple invoicing software specifically for the German market. Includes German tax forms and is designed for small businesses."},
   features:["Deutsch","Einfach","Umsatzsteuer"],
+  pros:{de:["Optimiert für deutschen Markt", "Einfache Bedienung", "Guter Kundensupport auf Deutsch"], en:["Optimized for German market", "Easy to use", "Good customer support in German"]},
+  cons:{de:["Weniger internationale Funktionen", "Design nicht modern"], en:["Fewer international features", "Design not modern"]},
   link:"https://debitoor.de/",
   badge:"free",
   useCases:["basic"],
@@ -427,10 +472,13 @@ let invoiceTools = [
   priceDisplay:{de:"ab 9€/Monat", en:"from $9/month"},
   rating:4.3,
   description:{de:"Deutsche Lösung mit DATEV Integration.", en:"German solution with DATEV integration."},
+  detailedDescription:{de:"FastBill ist eine deutsche Rechnungssoftware mit DATEV-Integration. Ideal für Freelancer, die mit Steuerberatern zusammenarbeiten.", en:"FastBill is a German invoicing software with DATEV integration. Ideal for freelancers who work with tax advisors."},
   features:["DATEV","Deutsch","Automatisch"],
+  pros:{de:["DATEV-Integration für Steuerberater", "Gute Automatisierungsfunktionen", "Deutsche Compliance"], en:["DATEV integration for tax advisors", "Good automation features", "German compliance"]},
+  cons:{de:["Komplexere Bedienung", "Teurer für umfangreiche Funktionen"], en:["More complex operation", "More expensive for extensive features"]},
   link:"https://www.fastbill.com/",
   badge:"popular",
-  useCases:["automation"],
+  useCases:["automation","advanced"],
   votes:0,
   userVote:0
 }
@@ -446,10 +494,13 @@ const moreTools = [
   priceDisplay:{de:"Kostenlos/Bezahlt", en:"Free/Paid"},
   rating:4.6,
   description:{de:"Von Fiverr: Alles für Freelancer in einer App.", en:"By Fiverr: Everything for freelancers in one app."},
+  detailedDescription:{de:"And Co (von Fiverr) kombiniert Rechnungen, Verträge, Zeiterfassung und Projektmanagement. Speziell für Freelancer-Plattformen optimiert.", en:"And Co (by Fiverr) combines invoices, contracts, time tracking and project management. Optimized specifically for freelancer platforms."},
   features:["Proposals","Contracts","Time"],
+  pros:{de:["Perfekt für Fiverr-Freelancer", "All-in-One Lösung", "Gute Integrationen"], en:["Perfect for Fiverr freelancers", "All-in-one solution", "Good integrations"]},
+  cons:{de:["Kostenpflichtige Features nötig für volle Funktionalität", "Weniger flexibel für Nicht-Fiverr-Nutzer"], en:["Paid features needed for full functionality", "Less flexible for non-Fiverr users"]},
   link:"https://www.and.co/",
   badge:"new",
-  useCases:["contracts"],
+  useCases:["contracts","time-tracking","automation"],
   votes:0,
   userVote:0
 },
@@ -461,10 +512,13 @@ const moreTools = [
   priceDisplay:{de:"ab 19€/Monat", en:"from $19/month"},
   rating:4.5,
   description:{de:"Dokumente, Verträge & eSignatures mit Tracking.", en:"Documents, contracts & eSignatures with tracking."},
+  detailedDescription:{de:"PandaDoc fokussiert sich auf dokumentenbasierte Workflows mit eSignatures. Ideal für Unternehmen, die Verträge und Rechnungen mit Unterschriften kombinieren.", en:"PandaDoc focuses on document-based workflows with eSignatures. Ideal for businesses that combine contracts and invoices with signatures."},
   features:["Dokumente","eSign","Tracking"],
+  pros:{de:["Exzellente eSignature-Funktionen", "Dokumenten-Tracking", "Professionelle Vorlagen"], en:["Excellent eSignature features", "Document tracking", "Professional templates"]},
+  cons:{de:["Teurer für kleine Teams", "Steile Lernkurve"], en:["Expensive for small teams", "Steep learning curve"]},
   link:"https://www.pandadoc.com/",
   badge:"popular",
-  useCases:["contracts"],
+  useCases:["contracts","automation"],
   votes:0,
   userVote:0
 },
@@ -476,10 +530,13 @@ const moreTools = [
   priceDisplay:{de:"ab 12€/Monat", en:"from $12/month"},
   rating:4.6,
   description:{de:"Cloud-Buchhaltung für kleine Unternehmen.", en:"Cloud accounting for small businesses."},
+  detailedDescription:{de:"Xero ist eine Cloud-Buchhaltungssoftware mit starken Rechnungsfunktionen. Besonders beliebt bei kleinen Unternehmen und Startups.", en:"Xero is a cloud accounting software with strong invoicing features. Particularly popular with small businesses and startups."},
   features:["Banking","Payroll","Reports"],
+  pros:{de:["Exzellente Buchhaltungsfunktionen", "Gute Bankintegration", "Starke Berichte"], en:["Excellent accounting functions", "Good bank integration", "Strong reports"]},
+  cons:{de:["Für reine Rechnungsstellung überdimensioniert", "Komplexe Einrichtung"], en:["Overkill for pure invoicing", "Complex setup"]},
   link:"https://www.xero.com/",
   badge:"popular",
-  useCases:["advanced"],
+  useCases:["advanced","international"],
   votes:0,
   userVote:0
 },
@@ -491,10 +548,13 @@ const moreTools = [
   priceDisplay:{de:"Kostenlos/ab 5€", en:"Free/from $5"},
   rating:4.1,
   description:{de:"Minimalistische Rechnungen mit KI-Vorschlägen.", en:"Minimalist invoices with AI suggestions."},
+  detailedDescription:{de:"SlimInvoice ist eine minimalistische Rechnungssoftware mit KI-Unterstützung. Fokussiert auf das Wesentliche ohne überflüssige Funktionen.", en:"SlimInvoice is a minimalist invoicing software with AI support. Focused on the essentials without unnecessary features."},
   features:["Minimal","KI","Schnell"],
+  pros:{de:["Sehr einfache Bedienung", "Schnelle Rechnungserstellung", "Günstige Preise"], en:["Very easy to use", "Fast invoice creation", "Low prices"]},
+  cons:{de:["Sehr begrenzte Funktionen", "Keine Mobile Apps", "Weniger professionelle Vorlagen"], en:["Very limited features", "No mobile apps", "Less professional templates"]},
   link:"https://slimvoice.co/",
   badge:"free",
-  useCases:["basic"],
+  useCases:["basic","automation"],
   votes:0,
   userVote:0
 }
@@ -545,7 +605,9 @@ const translations = {
     resetBtn: "Filter zurücksetzen",
     footerCopy: "© 2026 Invoice Finder | Community-gestützte Rechnungs-Tool Empfehlungen",
     footerDiscl: "Bewertungen basieren auf User-Feedback (LocalStorage).",
-    helpful: "Hilfreich"
+    helpful: "Hilfreich",
+    pros: "Vorteile: ",
+    cons: "Nachteile: "
   },
   en: {
     badge: n => `🚀 ${n} Invoicing Tools for 2026`,
@@ -588,7 +650,9 @@ const translations = {
     resetBtn: "Reset filters",
     footerCopy: "© 2026 Invoice Finder | Community-driven invoicing tool recommendations",
     footerDiscl: "Ratings based on user feedback (LocalStorage).",
-    helpful: "Helpful"
+    helpful: "Helpful",
+    pros: "Pros: ",
+    cons: "Cons: "
   }
 };
 
@@ -597,6 +661,7 @@ let cat = 'all';
 let price = 'all';
 let sort = 'votes';
 let query = '';
+let activeUseCase = '';
 let searchTimeout;
 let userVotes = {};
 
@@ -677,20 +742,33 @@ function setupEvents() {
     const card = e.target.closest('.quick-card');
     if (!card) return;
     
+    // Remove active class from all quick cards
+    document.querySelectorAll('.quick-card').forEach(c => c.classList.remove('active'));
+    
+    // Add active class to clicked card
+    card.classList.add('active');
+    
     const category = card.dataset.category;
     const useCase = card.dataset.usecase;
     
+    // Also reset filter buttons
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector('[data-scope="all"]').classList.add('active');
     
     if (category) {
-      cat = category;
-      document.querySelector(`[data-category="${category}"]`).classList.add('active');
+      cat = 'all';
+      price = category; // For free category
+      activeUseCase = '';
+      document.getElementById('priceFilter').value = price;
     } else if (useCase) {
       cat = 'all';
-      query = useCase;
-      searchInput.value = translations[lang][`nav${useCase.split('-')[0].charAt(0).toUpperCase() + useCase.split('-')[0].slice(1)}`];
-      document.querySelector('[data-scope="all"]').classList.add('active');
+      price = 'all';
+      activeUseCase = useCase;
+      document.getElementById('priceFilter').value = price;
     }
+    
+    query = '';
+    searchInput.value = '';
     
     applyFilters();
     window.scrollTo({ top: document.querySelector('.tools-container').offsetTop - 20, behavior: 'smooth' });
@@ -699,6 +777,9 @@ function setupEvents() {
   document.querySelector('.compact-filters').addEventListener('click', e => {
     const btn = e.target.closest('.filter-btn');
     if (!btn) return;
+    
+    // Reset quick cards
+    document.querySelectorAll('.quick-card').forEach(c => c.classList.remove('active'));
     
     document.querySelectorAll('.compact-filters .filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
@@ -709,11 +790,18 @@ function setupEvents() {
       cat = btn.dataset.category;
     }
     
+    price = 'all';
+    activeUseCase = '';
+    document.getElementById('priceFilter').value = price;
+    
     applyFilters();
   });
 
   document.getElementById('priceFilter').addEventListener('change', function() {
     price = this.value;
+    // Reset quick cards
+    document.querySelectorAll('.quick-card').forEach(c => c.classList.remove('active'));
+    activeUseCase = '';
     applyFilters();
   });
   
@@ -875,7 +963,13 @@ function renderTopCharts() {
       <div class="chart-tool-name">${tool.name}</div>
       <div class="chart-category">${catName(tool.category)}</div>
       <div class="chart-price">${tool.priceDisplay[lang]}</div>
-      <div class="chart-description">${tool.description[lang]}</div>
+      <div class="chart-description">${tool.detailedDescription ? tool.detailedDescription[lang] : tool.description[lang]}</div>
+      ${tool.pros ? `
+      <div class="chart-pros-cons">
+        <div class="pros-list"><strong>${translations[lang].pros}</strong> ${tool.pros[lang].slice(0,2).join(', ')}</div>
+        <div class="cons-list"><strong>${translations[lang].cons}</strong> ${tool.cons[lang].slice(0,1).join(', ')}</div>
+      </div>
+      ` : ''}
       <div class="chart-actions">
         <button class="vote-btn up ${tool.userVote === 1 ? 'active' : ''}" data-id="${tool.id}" data-vote="1">
           <i class="fas fa-thumbs-up"></i> ${translations[lang].helpful}
@@ -924,6 +1018,12 @@ function applyFilters() {
   let filtered = invoiceTools.filter(tool => {
     if (cat !== 'all' && tool.category !== cat) return false;
     if (price !== 'all' && tool.price !== price) return false;
+    
+    // Filter by use case if active
+    if (activeUseCase && (!tool.useCases || !tool.useCases.includes(activeUseCase))) {
+      return false;
+    }
+    
     if (query) {
       const txt = `${tool.name} ${tool.category} ${tool.description[lang]} ${tool.features.join(' ')}`.toLowerCase();
       if (!txt.includes(query)) return false;
@@ -986,7 +1086,13 @@ function renderTools(tools) {
           <div class="tool-name-compact">${tool.name}</div>
           <div class="tool-category-compact">${catName(tool.category)}</div>
         </div>
-        <div class="tool-desc-compact">${tool.description[lang]}</div>
+        <div class="tool-desc-compact">${tool.detailedDescription ? tool.detailedDescription[lang] : tool.description[lang]}</div>
+        ${tool.pros ? `
+        <div class="tool-pros-cons-compact">
+          <span class="pros">${t.pros}</span>${tool.pros[lang].slice(0,2).join(', ')} 
+          <span class="cons">${t.cons}</span>${tool.cons[lang].slice(0,1).join(', ')}
+        </div>
+        ` : ''}
       </div>
       <div class="tool-meta-compact">
         <div class="tool-price-compact">${tool.priceDisplay[lang]}</div>
@@ -1010,11 +1116,13 @@ function resetFilters() {
   price = 'all';
   sort = 'votes';
   query = '';
+  activeUseCase = '';
   document.getElementById('searchInput').value = '';
   document.getElementById('priceFilter').value = 'all';
   document.getElementById('sortFilter').value = 'votes';
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   document.querySelector('[data-scope="all"]').classList.add('active');
+  document.querySelectorAll('.quick-card').forEach(c => c.classList.remove('active'));
   applyFilters();
 }
 </script>
