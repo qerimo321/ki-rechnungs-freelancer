@@ -3,35 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- CSP etwas gelockert für bessere Google-Dienste-Kompatibilität -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://google-analytics.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://google-analytics.com; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://google-analytics.com https://aqemezlbkktmtbxwqjtk.supabase.co; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://google-analytics.com https://aqemezlbkktmtbxwqjtk.supabase.co; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
 <title>Invoice Finder 2026 - Find Your Perfect Invoicing Tool for Freelancers</title>
 <meta name="description" content="Find your perfect invoicing tool in 2 clicks. Real freelancer reviews, Top 5 charts, intelligent recommendations for 2026.">
 <meta name="keywords" content="invoicing software freelancer, AI invoices, automated invoices, freelancer tools, free invoicing software">
 <meta name="google-site-verification" content="Wo_6LQQ8LoGlobalzVMjBHh_Z-VD3N_dFdqCZb2BYxV0" />
-
-<!-- KORRIGIERT: Nur ein canonical Tag mit korrekter URL -->
 <link rel="canonical" href="https://billr-ai.github.io/Ki-Tools-Freelancer/">
-
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Invoice Finder 2026 - Find Your Perfect Invoicing Tool for Freelancers">
 <meta property="og:description" content="Find your perfect invoicing tool in 2 clicks. Real freelancer reviews, Top 5 charts, intelligent recommendations.">
-<!-- KORRIGIERT: og:url auf die tatsächliche Seite -->
 <meta property="og:url" content="https://billr-ai.github.io/Ki-Tools-Freelancer/">
 <meta property="og:site_name" content="Invoice Finder">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Invoice Finder 2026">
 <meta name="twitter:description" content="Find your perfect invoicing tool in 2 clicks">
 
-<!-- Google Analytics mit erweitertem Tracking -->
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BSC0RCF1MJ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  
-  // Erweitertes Google Analytics Setup
   gtag('config', 'G-BSC0RCF1MJ', {
     anonymize_ip: true,
     page_title: document.title,
@@ -41,15 +34,12 @@
   });
 </script>
 
-<!-- Sitemap Discovery -->
 <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<!-- KORRIGIERT: JSON-LD mit korrekter URL -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -66,7 +56,7 @@
 </script>
 
 <style>
-/* ... Ihr bestehender CSS-Code bleibt unverändert ... */
+/* Dein bestehender CSS bleibt komplett unverändert */
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
   --primary:#3b82f6;
@@ -132,7 +122,7 @@ body{
 .search-tips-scroll-btn.right{right:-30px}
 .search-tips-scroll-btn.hidden{display:none}
 .quick-navigation{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;max-width:1200px;margin:0 auto 30px;padding:0 20px}
-.quick-card{background:white;border-radius:var(--radius);padding:20px;transition:var(--transition);border:2px solid var(--card-border);display:flex;flex-direction:column;align-items:center;text-align:center;cursor:pointer;box-shadow:var(--shadow)}
+.quick-card{background:white;border-radius:var(--radius);padding:20px;border:2px solid var(--card-border);display:flex;flex-direction:column;align-items:center;text-align:center;cursor:pointer;box-shadow:var(--shadow)}
 .quick-card:hover{transform:translateY(-5px);border-color:var(--primary);box-shadow:0 12px 25px rgba(59,130,246,0.15)}
 .quick-card.active{background:linear-gradient(135deg, var(--primary-light), var(--primary));border-color:var(--primary);color:white;}
 .quick-card.active .quick-title,
@@ -306,8 +296,125 @@ body{
 .modal-submit{background:linear-gradient(135deg,var(--forum),var(--forum-light));color:white;border:none;padding:14px;border-radius:8px;font-weight:700;cursor:pointer;transition:var(--transition);font-size:1rem;}
 .modal-submit:hover{transform:translateY(-2px);box-shadow:0 6px 15px rgba(139,92,246,0.3);}
 
-@media (max-width:768px){.header{padding:50px 15px 15px}.header h1{font-size:1.8rem}.header p{font-size:1rem}.quick-navigation{grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;padding:0 15px}.top-charts-section{padding:0 15px}.tools-container{padding:0 15px 30px}.compact-tools-header{flex-direction:column;align-items:stretch}.compact-filters{justify-content:center}.compact-tool-row{grid-template-columns:1fr;gap:12px}.tool-meta-compact{flex-direction:row;justify-content:space-between;align-items:center;min-width:auto;margin-top:10px}.tool-vote-compact{flex-direction:row;gap:15px;justify-content:center;min-width:auto;margin-bottom:10px}.forum-header{flex-direction:column;align-items:stretch;}.forum-stats{justify-content:center;}.search-tips{padding:0 2px;}.search-tip-item{padding:2px 8px;font-size:0.75rem;}.search-tips-scroll-btn{display:none !important;}.search-tips-label{font-size:0.75rem;margin-right:6px;}.modal-content{padding:20px;}}
-@media (max-width:480px){.header h1{font-size:1.6rem}.search-box{padding:14px 16px 14px 48px;font-size:0.95rem}.quick-navigation{grid-template-columns:1fr 1fr}.top-charts{grid-template-columns:1fr}.compact-tool-row{padding:15px}.vote-btn-compact{font-size:1.2rem}.forum-tabs{justify-content:center;}}
+/* Supabase Notification */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--primary);
+  color: white;
+  padding: 15px 20px;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 10000;
+  box-shadow: var(--shadow);
+  animation: slideIn 0.3s ease;
+}
+
+.notification.success {
+  background: var(--secondary);
+}
+
+.notification.error {
+  background: var(--danger);
+}
+
+.notification-close {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0;
+  font-size: 1rem;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOut {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(100%); opacity: 0; }
+}
+
+.sync-button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition);
+  margin-left: 15px;
+}
+
+.sync-button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.shared-badge {
+  background: linear-gradient(135deg, var(--forum), var(--forum-light));
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-left: 10px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.supabase-status {
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 999;
+  border: 1px solid var(--card-border);
+}
+
+.supabase-status.online {
+  color: var(--secondary);
+}
+
+.supabase-status.offline {
+  color: var(--danger);
+}
+
+.supabase-status i {
+  font-size: 0.7rem;
+}
+
+.data-refresh {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width:768px){.header{padding:50px 15px 15px}.header h1{font-size:1.8rem}.header p{font-size:1rem}.quick-navigation{grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;padding:0 15px}.top-charts-section{padding:0 15px}.tools-container{padding:0 15px 30px}.compact-tools-header{flex-direction:column;align-items:stretch}.compact-filters{justify-content:center}.compact-tool-row{grid-template-columns:1fr;gap:12px}.tool-meta-compact{flex-direction:row;justify-content:space-between;align-items:center;min-width:auto;margin-top:10px}.tool-vote-compact{flex-direction:row;gap:15px;justify-content:center;min-width:auto;margin-bottom:10px}.forum-header{flex-direction:column;align-items:stretch;}.forum-stats{justify-content:center;}.search-tips{padding:0 2px;}.search-tip-item{padding:2px 8px;font-size:0.75rem;}.search-tips-scroll-btn{display:none !important;}.search-tips-label{font-size:0.75rem;margin-right:6px;}.modal-content{padding:20px;}.sync-button{margin:10px 0 0 0;}}
+@media (max-width:480px){.header h1{font-size:1.6rem}.search-box{padding:14px 16px 14px 48px;font-size:0.95rem}.quick-navigation{grid-template-columns:1fr 1fr}.top-charts{grid-template-columns:1fr}.compact-tool-row{padding:15px}.vote-btn-compact{font-size:1.2rem}.forum-tabs{justify-content:center;}.supabase-status{bottom:70px;}}
 </style>
 </head>
 <body>
@@ -402,7 +509,11 @@ body{
 </div>
 </section>
 <section class="top-charts-section">
-<div class="section-title"><i class="fas fa-trophy"></i> <span id="topChartsTitle">Top 5 Invoicing Tools - Community Ranking</span></div>
+<div class="section-title">
+<i class="fas fa-trophy"></i> 
+<span id="topChartsTitle">Top 5 Invoicing Tools - Community Ranking</span>
+<span class="shared-badge">LIVE</span>
+</div>
 <div class="top-charts" id="topCharts"></div>
 </section>
 
@@ -412,6 +523,7 @@ body{
 <div class="forum-title">
 <i class="fas fa-comments"></i>
 <span id="forumTitle">Community Forum</span>
+<span class="shared-badge">LIVE</span>
 </div>
 <div class="forum-stats">
 <div class="forum-stat">
@@ -480,6 +592,9 @@ body{
 <div class="filter-group">
 <select id="sortFilter" class="filter-select"></select>
 </div>
+<button class="sync-button" id="refreshDataBtn">
+<i class="fas fa-sync-alt"></i> <span id="refreshText">Refresh</span>
+</button>
 </div>
 <div class="tools-count"><span id="toolCount">16</span> <span id="toolsText">Tools</span></div>
 </div>
@@ -488,11 +603,16 @@ body{
 
 <footer class="footer">
 <p id="footerCopy">© 2026 Invoice Finder | Community-driven invoicing tool recommendations</p>
-<p id="footerDiscl">Ratings based on user feedback (LocalStorage).</p>
+<p id="footerDiscl">Ratings based on user feedback (Supabase). All data is shared across all users.</p>
 <p><a href="#"><i class="fas fa-question-circle"></i> Help</a> | <a href="#"><i class="fas fa-envelope"></i> Feedback</a></p>
 </footer>
+
 <script>
-// Invoice Tools Database - ALL 16 TOOLS RESTORED
+// Supabase Konfiguration - DEINE DATEN
+const SUPABASE_URL = 'https://aqemezlbkktmtbxwqjtk.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_lqM39_8HE_4I_vAi5-4iKA_2jKZZbkH';
+
+// Invoice Tools Database - ALL 16 TOOLS
 let invoiceTools = [
 {
   id:1,
@@ -784,11 +904,25 @@ let invoiceTools = [
 }
 ];
 
-// NO pre-made forum data - start with empty array
+// Shared Data
 let forumDiscussions = [];
-
-// NO pre-made tool comments - start with empty object
 let toolComments = {};
+let userLikes = {};
+let userId = '';
+let username = '';
+
+// App State
+let lang = 'de';
+let cat = 'all';
+let price = 'all';
+let sort = 'votes';
+let query = '';
+let activeUseCase = '';
+let forumFilter = 'all';
+let searchTimeout;
+let lastVotedToolId = null;
+let oldPositions = {};
+let openDiscussions = {};
 
 // Translations
 const translations = {
@@ -834,7 +968,7 @@ const translations = {
     noMsg: "Ändere deine Filter oder versuche andere Suchbegriffe.",
     resetBtn: "Filter zurücksetzen",
     footerCopy: "© 2026 Invoice Finder | Community-gestützte Rechnungs-Tool Empfehlungen",
-    footerDiscl: "Bewertungen basieren auf User-Feedback (LocalStorage).",
+    footerDiscl: "Bewertungen basieren auf User-Feedback (Supabase). Alle Daten werden mit allen Nutzern geteilt.",
     helpful: "Hilfreich",
     pros: "Vorteile: ",
     cons: "Nachteile: ",
@@ -868,7 +1002,8 @@ const translations = {
     commentPlural: "Kommentare",
     noDiscussions: "Noch keine Diskussionen",
     beFirst: "Sei der Erste, der eine Diskussion startet!",
-    startFirstDiscussion: "Erste Diskussion starten"
+    startFirstDiscussion: "Erste Diskussion starten",
+    refreshText: "Aktualisieren"
   },
   en: {
     badge: n => `🚀 ${n} Invoicing Tools for 2026`,
@@ -912,7 +1047,7 @@ const translations = {
     noMsg: "Change your filters or try different search terms.",
     resetBtn: "Reset filters",
     footerCopy: "© 2026 Invoice Finder | Community-driven invoicing tool recommendations",
-    footerDiscl: "Ratings based on user feedback (LocalStorage).",
+    footerDiscl: "Ratings based on user feedback (Supabase). All data is shared across all users.",
     helpful: "Helpful",
     pros: "Pros: ",
     cons: "Cons: ",
@@ -946,55 +1081,50 @@ const translations = {
     commentPlural: "comments",
     noDiscussions: "No discussions yet",
     beFirst: "Be the first to start a discussion!",
-    startFirstDiscussion: "Start First Discussion"
+    startFirstDiscussion: "Start First Discussion",
+    refreshText: "Refresh"
   }
 };
 
-let lang = 'de';
-let cat = 'all';
-let price = 'all';
-let sort = 'votes';
-let query = '';
-let activeUseCase = '';
-let forumFilter = 'all';
-let searchTimeout;
-let userVotes = {};
-let userLikes = {};
-let lastVotedToolId = null;
-let oldPositions = {};
-let openDiscussions = {};
-let username = '';
-
-// Initialize
-document.addEventListener('DOMContentLoaded', () => {
-  loadUserData();
-  setupEvents();
-  updateLang();
-  renderTopCharts();
-  applyFilters();
-  renderForum();
-  renderSearchTips();
-  setupSearchTipsScroll();
-});
-
-function loadUserData() {
-  // Load votes
-  const savedVotes = localStorage.getItem('invoiceToolsVotes');
-  if (savedVotes) {
-    userVotes = JSON.parse(savedVotes);
-    invoiceTools.forEach(tool => {
-      if (userVotes[tool.id]) {
-        tool.votes = userVotes[tool.id].votes || 0;
-        tool.userVote = userVotes[tool.id].userVote || 0;
-      }
+// Supabase Helper Functions
+async function supabaseFetch(endpoint, options = {}) {
+  const headers = {
+    'apikey': SUPABASE_ANON_KEY,
+    'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+    'Content-Type': 'application/json',
+    ...options.headers
+  };
+  
+  try {
+    const response = await fetch(`${SUPABASE_URL}/rest/v1/${endpoint}`, {
+      ...options,
+      headers
     });
+    
+    if (!response.ok) {
+      throw new Error(`Supabase error: ${response.status}`);
+    }
+    
+    if (response.status === 204) {
+      return null;
+    }
+    
+    return await response.json();
+  } catch (error) {
+    console.error('Supabase fetch error:', error);
+    throw error;
+  }
+}
+
+async function initializeUser() {
+  // Generate or load user ID
+  userId = localStorage.getItem('supabase_user_id');
+  if (!userId) {
+    userId = 'user_' + Math.random().toString(36).substr(2, 9);
+    localStorage.setItem('supabase_user_id', userId);
   }
   
-  // Load likes
-  const savedLikes = localStorage.getItem('forumLikes');
-  if (savedLikes) userLikes = JSON.parse(savedLikes);
-  
-  // Load username or generate one
+  // Generate or load username
   username = localStorage.getItem('forumUsername');
   if (!username) {
     const adjectives = ["Clever", "Smart", "Creative", "Pro", "Fast", "Digital", "Tech", "Free"];
@@ -1006,35 +1136,166 @@ function loadUserData() {
     localStorage.setItem('forumUsername', username);
   }
   
-  // Load tool comments
-  const savedComments = localStorage.getItem('toolComments');
-  if (savedComments) toolComments = JSON.parse(savedComments);
-  
-  // Load forum discussions
-  const savedDiscussions = localStorage.getItem('forumDiscussions');
-  if (savedDiscussions) forumDiscussions = JSON.parse(savedDiscussions);
-}
-
-function saveUserData() {
-  // Save votes
-  const toSaveVotes = {};
-  invoiceTools.forEach(tool => {
-    if (tool.votes !== 0 || tool.userVote !== 0) {
-      toSaveVotes[tool.id] = { votes: tool.votes, userVote: tool.userVote };
+  // Initialize tool votes in Supabase if not exists
+  for (const tool of invoiceTools) {
+    try {
+      await supabaseFetch('tool_votes', {
+        method: 'POST',
+        body: JSON.stringify({
+          tool_id: tool.id,
+          upvotes: 0,
+          downvotes: 0,
+          total_votes: 0
+        }),
+        headers: { 'Prefer': 'resolution=merge-duplicates' }
+      });
+    } catch (error) {
+      // Tool might already exist, ignore
     }
-  });
-  localStorage.setItem('invoiceToolsVotes', JSON.stringify(toSaveVotes));
-  
-  // Save likes
-  localStorage.setItem('forumLikes', JSON.stringify(userLikes));
-  
-  // Save comments
-  localStorage.setItem('toolComments', JSON.stringify(toolComments));
-  
-  // Save discussions
-  localStorage.setItem('forumDiscussions', JSON.stringify(forumDiscussions));
+  }
 }
 
+async function loadAllData() {
+  try {
+    showNotification('Lade Daten von Supabase...', 'info');
+    
+    // Load tool votes
+    const votesData = await supabaseFetch('tool_votes?select=*');
+    if (votesData) {
+      votesData.forEach(vote => {
+        const tool = invoiceTools.find(t => t.id === vote.tool_id);
+        if (tool) {
+          tool.votes = vote.total_votes || 0;
+        }
+      });
+    }
+    
+    // Load forum discussions
+    const discussionsData = await supabaseFetch('forum_discussions?select=*&order=created_at.desc');
+    if (discussionsData) {
+      forumDiscussions = discussionsData.map(d => ({
+        id: d.id,
+        toolId: d.tool_id,
+        toolName: d.tool_name,
+        author: d.author,
+        avatar: d.author?.substring(0, 2).toUpperCase() || '??',
+        title: d.title,
+        content: d.content,
+        likes: d.likes || 0,
+        comments: d.comments || 0,
+        timestamp: d.created_at
+      }));
+    }
+    
+    // Load tool comments
+    const commentsData = await supabaseFetch('tool_comments?select=*&order=created_at.desc');
+    if (commentsData) {
+      toolComments = {};
+      commentsData.forEach(comment => {
+        if (!toolComments[comment.tool_id]) {
+          toolComments[comment.tool_id] = [];
+        }
+        toolComments[comment.tool_id].push({
+          author: comment.author,
+          text: comment.comment,
+          timestamp: comment.created_at
+        });
+      });
+    }
+    
+    // Load user likes
+    const likesData = await supabaseFetch(`discussion_likes?select=*&author_id=eq.${userId}`);
+    if (likesData) {
+      likesData.forEach(like => {
+        userLikes[like.discussion_id] = true;
+      });
+    }
+    
+    // Load local user votes for UI state
+    const savedVotes = localStorage.getItem('invoiceToolsVotes');
+    if (savedVotes) {
+      const userVotes = JSON.parse(savedVotes);
+      invoiceTools.forEach(tool => {
+        if (userVotes[tool.id]) {
+          tool.userVote = userVotes[tool.id].userVote || 0;
+        }
+      });
+    }
+    
+    // Update status indicator
+    updateStatusIndicator(true);
+    showNotification('Daten erfolgreich geladen!', 'success');
+  } catch (error) {
+    console.error('Error loading data:', error);
+    updateStatusIndicator(false);
+    showNotification('Fehler beim Laden der Daten. Verwende lokale Daten.', 'error');
+  }
+}
+
+// Notification System
+function showNotification(message, type = 'info') {
+  const notification = document.createElement('div');
+  notification.className = `notification ${type}`;
+  notification.innerHTML = `
+    <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
+    <span>${message}</span>
+    <button class="notification-close"><i class="fas fa-times"></i></button>
+  `;
+  
+  document.body.appendChild(notification);
+  
+  // Add close event
+  notification.querySelector('.notification-close').addEventListener('click', () => {
+    notification.style.animation = 'slideOut 0.3s ease';
+    setTimeout(() => notification.remove(), 300);
+  });
+  
+  // Auto remove after 5 seconds
+  setTimeout(() => {
+    if (notification.parentNode) {
+      notification.style.animation = 'slideOut 0.3s ease';
+      setTimeout(() => notification.remove(), 300);
+    }
+  }, 5000);
+}
+
+function updateStatusIndicator(online) {
+  let indicator = document.querySelector('.supabase-status');
+  if (!indicator) {
+    indicator = document.createElement('div');
+    indicator.className = 'supabase-status';
+    document.body.appendChild(indicator);
+  }
+  
+  indicator.className = `supabase-status ${online ? 'online' : 'offline'}`;
+  indicator.innerHTML = `
+    <i class="fas fa-database"></i>
+    <span>Supabase ${online ? 'Connected' : 'Offline'}</span>
+  `;
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', async () => {
+  await initializeUser();
+  await loadAllData();
+  setupEvents();
+  updateLang();
+  renderTopCharts();
+  applyFilters();
+  renderForum();
+  renderSearchTips();
+  setupSearchTipsScroll();
+  
+  // Auto-refresh every 30 seconds
+  setInterval(async () => {
+    await loadAllData();
+    renderTopCharts();
+    applyFilters();
+    renderForum();
+  }, 30000);
+});
+
+// Event Setup
 function setupEvents() {
   // Language switch
   document.getElementById('langBtn').addEventListener('click', () => {
@@ -1169,7 +1430,7 @@ function setupEvents() {
   });
 
   // Forum form submission
-  document.getElementById('forumForm').addEventListener('submit', function(e) {
+  document.getElementById('forumForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     
     const toolId = parseInt(document.getElementById('modalToolSelect').value);
@@ -1181,31 +1442,37 @@ function setupEvents() {
     const tool = invoiceTools.find(t => t.id === toolId);
     if (!tool) return;
     
-    // Create new discussion
-    const newDiscussion = {
-      id: forumDiscussions.length + 1,
-      toolId: toolId,
-      toolName: tool.name,
-      author: username,
-      avatar: username.substring(0, 2).toUpperCase(),
-      title: title,
-      content: content,
-      likes: 0,
-      comments: 0,
-      timestamp: new Date().toISOString(),
-      tags: []
-    };
-    
-    forumDiscussions.unshift(newDiscussion);
-    saveUserData();
-    renderForum();
-    
-    // Reset form and close modal
-    this.reset();
-    document.getElementById('forumModal').classList.remove('active');
-    
-    // Scroll to forum section
-    document.querySelector('.forum-section').scrollIntoView({ behavior: 'smooth' });
+    try {
+      const result = await supabaseFetch('forum_discussions', {
+        method: 'POST',
+        body: JSON.stringify({
+          tool_id: toolId,
+          tool_name: tool.name,
+          author: username,
+          author_id: userId,
+          title: title,
+          content: content,
+          likes: 0,
+          comments: 0
+        })
+      });
+      
+      if (result) {
+        showNotification('Diskussion erfolgreich erstellt!', 'success');
+        // Reset form and close modal
+        this.reset();
+        document.getElementById('forumModal').classList.remove('active');
+        
+        // Reload data
+        await loadAllData();
+        renderForum();
+        
+        // Scroll to forum section
+        document.querySelector('.forum-section').scrollIntoView({ behavior: 'smooth' });
+      }
+    } catch (error) {
+      showNotification('Fehler beim Erstellen der Diskussion', 'error');
+    }
   });
 
   // Scroll to top button
@@ -1216,7 +1483,189 @@ function setupEvents() {
   scrollBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+
+  // Refresh data button
+  document.getElementById('refreshDataBtn').addEventListener('click', async () => {
+    const btn = document.getElementById('refreshDataBtn');
+    btn.classList.add('data-refresh');
+    
+    await loadAllData();
+    renderTopCharts();
+    applyFilters();
+    renderForum();
+    
+    setTimeout(() => {
+      btn.classList.remove('data-refresh');
+    }, 1000);
+  });
 }
+
+// Voting System with Supabase
+async function handleVote(toolId, vote) {
+  const tool = invoiceTools.find(t => t.id === toolId);
+  if (!tool) return;
+
+  const oldUserVote = tool.userVote;
+  
+  if (tool.userVote === vote) {
+    // Remove vote
+    tool.userVote = 0;
+  } else {
+    // Add or change vote
+    tool.userVote = vote;
+  }
+  
+  // Save local user vote
+  const savedVotes = JSON.parse(localStorage.getItem('invoiceToolsVotes') || '{}');
+  savedVotes[toolId] = { userVote: tool.userVote };
+  localStorage.setItem('invoiceToolsVotes', JSON.stringify(savedVotes));
+  
+  // Calculate vote changes for Supabase
+  let upvoteChange = 0;
+  let downvoteChange = 0;
+  
+  if (oldUserVote === 1 && vote === 1) {
+    // Removing upvote
+    upvoteChange = -1;
+  } else if (oldUserVote === -1 && vote === -1) {
+    // Removing downvote
+    downvoteChange = -1;
+  } else if (oldUserVote === 1 && vote === -1) {
+    // Changing from upvote to downvote
+    upvoteChange = -1;
+    downvoteChange = 1;
+  } else if (oldUserVote === -1 && vote === 1) {
+    // Changing from downvote to upvote
+    downvoteChange = -1;
+    upvoteChange = 1;
+  } else if (oldUserVote === 0 && vote === 1) {
+    // New upvote
+    upvoteChange = 1;
+  } else if (oldUserVote === 0 && vote === -1) {
+    // New downvote
+    downvoteChange = 1;
+  }
+  
+  // Update in Supabase
+  try {
+    const existingVote = await supabaseFetch(`tool_votes?tool_id=eq.${toolId}`);
+    
+    if (existingVote && existingVote[0]) {
+      const updatedUpvotes = (existingVote[0].upvotes || 0) + upvoteChange;
+      const updatedDownvotes = (existingVote[0].downvotes || 0) + downvoteChange;
+      const updatedTotal = updatedUpvotes - updatedDownvotes;
+      
+      await supabaseFetch(`tool_votes?tool_id=eq.${toolId}`, {
+        method: 'PATCH',
+        body: JSON.stringify({
+          upvotes: updatedUpvotes,
+          downvotes: updatedDownvotes,
+          total_votes: updatedTotal
+        })
+      });
+      
+      // Update local state
+      tool.votes = updatedTotal;
+      
+      // UI Animation
+      lastVotedToolId = toolId;
+      renderTopCharts();
+      applyFilters();
+      
+      showNotification('Dein Vote wurde gespeichert!', 'success');
+    }
+  } catch (error) {
+    console.error('Error updating vote:', error);
+    showNotification('Fehler beim Speichern des Votes', 'error');
+  }
+}
+
+// Forum Likes with Supabase
+async function handleForumLike(discussionId) {
+  const discussion = forumDiscussions.find(d => d.id === discussionId);
+  if (!discussion) return;
+  
+  const isLiked = userLikes[discussionId] === true;
+  
+  try {
+    if (isLiked) {
+      // Unlike
+      await supabaseFetch(`discussion_likes?discussion_id=eq.${discussionId}&author_id=eq.${userId}`, {
+        method: 'DELETE'
+      });
+      
+      // Update discussion likes count
+      await supabaseFetch(`forum_discussions?id=eq.${discussionId}`, {
+        method: 'PATCH',
+        body: JSON.stringify({ likes: discussion.likes - 1 })
+      });
+      
+      userLikes[discussionId] = false;
+      discussion.likes--;
+    } else {
+      // Like
+      await supabaseFetch('discussion_likes', {
+        method: 'POST',
+        body: JSON.stringify({
+          discussion_id: discussionId,
+          author_id: userId
+        })
+      });
+      
+      // Update discussion likes count
+      await supabaseFetch(`forum_discussions?id=eq.${discussionId}`, {
+        method: 'PATCH',
+        body: JSON.stringify({ likes: discussion.likes + 1 })
+      });
+      
+      userLikes[discussionId] = true;
+      discussion.likes++;
+    }
+    
+    renderForum();
+  } catch (error) {
+    console.error('Error handling like:', error);
+    showNotification('Fehler beim Speichern des Likes', 'error');
+  }
+}
+
+// Tool Comments with Supabase
+async function handleCommentSubmit(toolId, commentText) {
+  if (!commentText.trim()) return;
+  
+  try {
+    await supabaseFetch('tool_comments', {
+      method: 'POST',
+      body: JSON.stringify({
+        tool_id: toolId,
+        author: username,
+        author_id: userId,
+        comment: commentText
+      })
+    });
+    
+    showNotification('Kommentar erfolgreich gespeichert!', 'success');
+    
+    // Reload comments
+    const commentsData = await supabaseFetch(`tool_comments?tool_id=eq.${toolId}&order=created_at.desc`);
+    if (commentsData) {
+      toolComments[toolId] = commentsData.map(comment => ({
+        author: comment.author,
+        text: comment.comment,
+        timestamp: comment.created_at
+      }));
+    }
+    
+    applyFilters();
+    return true;
+  } catch (error) {
+    console.error('Error submitting comment:', error);
+    showNotification('Fehler beim Speichern des Kommentars', 'error');
+    return false;
+  }
+}
+
+// Rest of your existing functions (setupSearchTipsScroll, renderSearchTips, openForumModal, renderForum, getTimeAgo, showSuggestions, hideSuggestions, highlight, catIcon, catName, updateLang, renderTopCharts, calculateScore, applyFilters, renderTools, resetFilters) remain the same but use the updated data structures
 
 function setupSearchTipsScroll() {
   const tipsContainer = document.getElementById('searchTips');
@@ -1227,7 +1676,6 @@ function setupSearchTipsScroll() {
     const container = document.querySelector('.search-tips-wrapper');
     const tips = document.getElementById('searchTips');
     
-    // Check if scrolling is needed
     const isOverflowing = tips.scrollWidth > container.clientWidth;
     
     if (isOverflowing) {
@@ -1238,14 +1686,12 @@ function setupSearchTipsScroll() {
       scrollRightBtn.classList.add('hidden');
     }
     
-    // Update left button state
     if (tips.scrollLeft <= 0) {
       scrollLeftBtn.classList.add('hidden');
     } else {
       scrollLeftBtn.classList.remove('hidden');
     }
     
-    // Update right button state
     if (tips.scrollLeft + tips.clientWidth >= tips.scrollWidth - 1) {
       scrollRightBtn.classList.add('hidden');
     } else {
@@ -1253,7 +1699,6 @@ function setupSearchTipsScroll() {
     }
   }
   
-  // Scroll buttons functionality
   scrollLeftBtn.addEventListener('click', () => {
     tipsContainer.scrollBy({ left: -100, behavior: 'smooth' });
   });
@@ -1262,52 +1707,42 @@ function setupSearchTipsScroll() {
     tipsContainer.scrollBy({ left: 100, behavior: 'smooth' });
   });
   
-  // Update on resize
   window.addEventListener('resize', updateScrollButtons);
   
-  // Initial check
   setTimeout(updateScrollButtons, 100);
-  setTimeout(updateScrollButtons, 500); // Double check after render
+  setTimeout(updateScrollButtons, 500);
 }
 
 function renderSearchTips() {
   const tipsContainer = document.getElementById('searchTips');
   const t = translations[lang];
   
-  // Clear existing tips except label
   const label = tipsContainer.querySelector('.search-tips-label');
   tipsContainer.innerHTML = '';
   if (label) tipsContainer.appendChild(label);
   
-  // Get tips for current language
   const tips = t.searchTips || [];
   
-  // Add each tip as a clickable element
   tips.forEach(tip => {
     const tipElement = document.createElement('span');
     tipElement.className = 'search-tip-item';
     tipElement.textContent = tip;
     tipElement.addEventListener('click', () => {
-      // Remove active class from all tips
       document.querySelectorAll('.search-tip-item').forEach(item => {
         item.classList.remove('active');
       });
       
-      // Add active class to clicked tip
       tipElement.classList.add('active');
       
       document.getElementById('searchInput').value = tip;
       query = tip.toLowerCase();
       applyFilters();
       
-      // Trigger input event to show suggestions
       const event = new Event('input', { bubbles: true });
       document.getElementById('searchInput').dispatchEvent(event);
       
-      // Focus the search input
       document.getElementById('searchInput').focus();
       
-      // Remove active class after 2 seconds
       setTimeout(() => {
         tipElement.classList.remove('active');
       }, 2000);
@@ -1315,7 +1750,6 @@ function renderSearchTips() {
     tipsContainer.appendChild(tipElement);
   });
   
-  // Update scroll buttons after rendering
   setTimeout(() => {
     setupSearchTipsScroll();
   }, 50);
@@ -1325,10 +1759,8 @@ function openForumModal() {
   const modal = document.getElementById('forumModal');
   const select = document.getElementById('modalToolSelect');
   
-  // Clear existing options except default
   select.innerHTML = '<option value="">' + translations[lang].modalSelectDefault + '</option>';
   
-  // Add tool options
   invoiceTools.forEach(tool => {
     const option = document.createElement('option');
     option.value = tool.id;
@@ -1343,11 +1775,9 @@ function renderForum() {
   const container = document.getElementById('forumContainer');
   const t = translations[lang];
   
-  // Update stats
   document.getElementById('forumDiscussionsCount').textContent = forumDiscussions.length;
-  document.getElementById('forumActiveUsers').textContent = forumDiscussions.length > 0 ? Math.min(forumDiscussions.length, 5) : 0;
+  document.getElementById('forumActiveUsers').textContent = Math.min(forumDiscussions.length, 5);
   
-  // Filter discussions
   let filteredDiscussions = [...forumDiscussions];
   
   if (forumFilter === 'popular') {
@@ -1379,7 +1809,6 @@ function renderForum() {
       </div>
     `;
     
-    // Re-add event listener
     document.getElementById('newDiscussionBtn2')?.addEventListener('click', openForumModal);
     return;
   }
@@ -1420,31 +1849,12 @@ function renderForum() {
     `;
   }).join('');
   
-  // Add event listeners for forum actions
   container.querySelectorAll('.like-btn').forEach(btn => {
     btn.addEventListener('click', function() {
       const discussionId = parseInt(this.dataset.id);
       handleForumLike(discussionId);
     });
   });
-}
-
-function handleForumLike(discussionId) {
-  const discussion = forumDiscussions.find(d => d.id === discussionId);
-  if (!discussion) return;
-  
-  const isLiked = userLikes[discussionId] === true;
-  
-  if (isLiked) {
-    discussion.likes--;
-    userLikes[discussionId] = false;
-  } else {
-    discussion.likes++;
-    userLikes[discussionId] = true;
-  }
-  
-  saveUserData();
-  renderForum();
 }
 
 function getTimeAgo(timestamp) {
@@ -1499,7 +1909,6 @@ function showSuggestions(q) {
           query = tool.name.toLowerCase();
           hideSuggestions();
           applyFilters();
-          // Scroll to that tool
           setTimeout(() => {
             const toolElement = document.querySelector(`[data-id="${toolId}"]`);
             if (toolElement) {
@@ -1577,6 +1986,7 @@ function updateLang() {
   document.getElementById('toolsText').textContent = t.toolsFound;
   document.getElementById('footerCopy').textContent = t.footerCopy;
   document.getElementById('footerDiscl').textContent = t.footerDiscl;
+  document.getElementById('refreshText').textContent = t.refreshText;
 
   const pf = document.getElementById('priceFilter');
   pf.innerHTML = `
@@ -1598,7 +2008,6 @@ function updateLang() {
   `;
   sf.value = sort;
   
-  // Forum translations
   document.getElementById('forumTitle').textContent = t.forumTitle;
   document.getElementById('forumDiscussionsText').textContent = t.forumDiscussionsText;
   document.getElementById('forumActiveText').textContent = t.forumActiveText;
@@ -1619,7 +2028,6 @@ function updateLang() {
 function renderTopCharts() {
   const container = document.getElementById('topCharts');
   
-  // Save old positions before recalculation
   const oldTopTools = [...invoiceTools]
     .sort((a, b) => calculateScore(b) - calculateScore(a))
     .slice(0, 5);
@@ -1629,7 +2037,6 @@ function renderTopCharts() {
     oldPositions[tool.id] = index + 1;
   });
   
-  // Sort based on current values
   const sortedTools = [...invoiceTools]
     .sort((a, b) => calculateScore(b) - calculateScore(a))
     .slice(0, 5);
@@ -1639,7 +2046,6 @@ function renderTopCharts() {
     const oldPosition = oldPositions[tool.id];
     let positionClass = '';
     
-    // Determine if position changed
     if (lastVotedToolId === tool.id) {
       if (oldPosition && newPosition < oldPosition) {
         positionClass = 'moving-up';
@@ -1678,7 +2084,6 @@ function renderTopCharts() {
     </div>
   `}).join('');
 
-  // Remove animations after 1.5 seconds
   setTimeout(() => {
     container.querySelectorAll('.chart-card.moving-up, .chart-card.moving-down').forEach(card => {
       card.classList.remove('moving-up', 'moving-down');
@@ -1688,7 +2093,6 @@ function renderTopCharts() {
     });
   }, 1500);
 
-  // Add vote event listeners
   container.querySelectorAll('.vote-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const toolId = parseInt(btn.dataset.id);
@@ -1702,115 +2106,11 @@ function calculateScore(tool) {
   return tool.votes + tool.rating * 10;
 }
 
-function handleVote(toolId, vote) {
-  const tool = invoiceTools.find(t => t.id === toolId);
-  if (!tool) return;
-
-  // Prepare animation effects
-  const voteBtn = document.querySelector(`[data-id="${toolId}"] .vote-btn[data-vote="${vote}"]`);
-  const otherVoteBtn = document.querySelector(`[data-id="${toolId}"] .vote-btn[data-vote="${vote * -1}"]`);
-  const voteCountElement = document.querySelector(`[data-id="${toolId}"] .vote-count`);
-  const chartVoteElement = document.querySelector(`[data-id="${toolId}"] .vote-count-display`);
-  
-  // If button is already active (vote being removed)
-  if (tool.userVote === vote) {
-    // Animation for removed vote
-    if (voteBtn) {
-      voteBtn.classList.add('removing');
-      setTimeout(() => {
-        voteBtn.classList.remove('active', 'removing');
-      }, 400);
-    }
-    
-    // Animation for vote count
-    if (voteCountElement) {
-      voteCountElement.classList.add(vote === 1 ? 'downvoted' : 'upvoted');
-      voteCountElement.classList.add('vote-count-animation');
-      setTimeout(() => {
-        voteCountElement.classList.remove('vote-count-animation');
-        setTimeout(() => {
-          voteCountElement.classList.remove(vote === 1 ? 'downvoted' : 'upvoted');
-        }, 300);
-      }, 600);
-    }
-    
-    // Update values
-    tool.votes -= vote;
-    tool.userVote = 0;
-    
-    // Remove other button if active
-    if (otherVoteBtn) {
-      otherVoteBtn.classList.remove('active');
-    }
-  } else {
-    // New vote or changing vote
-    
-    // If vote already existed (different direction)
-    if (tool.userVote !== 0) {
-      tool.votes -= tool.userVote;
-      
-      // Animation for removing old vote
-      if (otherVoteBtn) {
-        otherVoteBtn.classList.add('removing');
-        setTimeout(() => {
-          otherVoteBtn.classList.remove('active', 'removing');
-        }, 400);
-      }
-    }
-    
-    // Add new vote
-    tool.votes += vote;
-    tool.userVote = vote;
-    
-    // Animation for new vote
-    if (voteBtn) {
-      voteBtn.classList.remove('removing');
-      voteBtn.classList.add('active');
-    }
-    
-    // Animation for vote count
-    if (voteCountElement) {
-      voteCountElement.classList.add(vote === 1 ? 'upvoted' : 'downvoted');
-      voteCountElement.classList.add('vote-count-animation');
-      setTimeout(() => {
-        voteCountElement.classList.remove('vote-count-animation');
-      }, 600);
-    }
-  }
-
-  // Save ID of last voted tool for animations
-  lastVotedToolId = toolId;
-  
-  // Update display in chart
-  if (chartVoteElement) {
-    chartVoteElement.textContent = tool.votes;
-    chartVoteElement.classList.add('vote-count-animation');
-    setTimeout(() => {
-      chartVoteElement.classList.remove('vote-count-animation');
-    }, 600);
-  }
-
-  userVotes[toolId] = { votes: tool.votes, userVote: tool.userVote };
-  saveUserData();
-  
-  // Render Top Charts with animations
-  renderTopCharts();
-  
-  // Update main list
-  applyFilters();
-  
-  // Reset lastVotedToolId after 2 seconds
-  setTimeout(() => {
-    lastVotedToolId = null;
-  }, 2000);
-}
-
 function applyFilters() {
   let filtered = invoiceTools.filter(tool => {
     if (cat !== 'all' && tool.category !== cat) return false;
     if (price !== 'all' && tool.price !== price) return false;
     
-    // Filter by use case if active
     if (activeUseCase && (!tool.useCases || !tool.useCases.includes(activeUseCase))) {
       return false;
     }
@@ -1928,7 +2228,6 @@ function renderTools(tools) {
     `;
   }).join('');
 
-  // Add vote event listeners
   grid.querySelectorAll('.vote-btn-compact').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const toolId = parseInt(btn.dataset.id);
@@ -1937,7 +2236,6 @@ function renderTools(tools) {
     });
   });
   
-  // Add discussion toggle listeners
   grid.querySelectorAll('.discussion-toggle-btn').forEach(btn => {
     btn.addEventListener('click', function() {
       const toolId = parseInt(this.dataset.id);
@@ -1946,28 +2244,17 @@ function renderTools(tools) {
     });
   });
   
-  // Add comment submit listeners
   grid.querySelectorAll('.discussion-submit-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', async function() {
       const toolId = parseInt(this.dataset.id);
       const input = document.getElementById(`comment-input-${toolId}`);
       const commentText = input.value.trim();
       
       if (commentText) {
-        if (!toolComments[toolId]) toolComments[toolId] = [];
-        
-        const newComment = {
-          author: username,
-          text: commentText,
-          timestamp: new Date().toLocaleDateString(lang === 'de' ? 'de-DE' : 'en-US')
-        };
-        
-        toolComments[toolId].push(newComment);
-        saveUserData();
-        applyFilters();
-        
-        // Clear input
-        input.value = '';
+        const success = await handleCommentSubmit(toolId, commentText);
+        if (success) {
+          input.value = '';
+        }
       }
     });
   });
